@@ -6,8 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="./style.css?v=3">
 
+  <!-- Font Awesome (icons – optional but consistent) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 
 <body class="dark">
@@ -19,85 +24,79 @@
     <h1 class="logo">MEMES</h1>
 
     <nav>
-      <a href="index.html">🏠 Home</a>
-      <a href="index.html#images">🖼️ Images</a>
-      <a href="index.html#videos">🎥 Videos</a>
-      <a href="index.html#gifs">🎞️ Gifs</a>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="index.html#images"><i class="fa-solid fa-image"></i> Images</a>
+      <a href="index.html#videos"><i class="fa-solid fa-video"></i> Videos</a>
+      <a href="index.html#gifs"><i class="fa-solid fa-photo-film"></i> Gifs</a>
 
-      <h4>Explore</h4>
-      <a href="index.html#templates">📂 Templates</a>
-      <a href="index.html#sound">🔊 Sound Effects</a>
-      <a href="index.html#origin">📜 Meme Origin</a>
+      <div class="section">
+        <h4>Explore</h4>
+        <a href="index.html#templates">📂 Templates</a>
+        <a href="index.html#sound">🔊 Sound Effects</a>
+        <a href="index.html#origin">📜 Meme Origin</a>
+      </div>
 
-      <h4>Support</h4>
-      <a href="about.html">ℹ️ About Us</a>
-      <a class="active">📩 Contact Us</a>
-      <a href="terms.html">📄 Terms & Conditions</a>
-      <a href="privacy.html">🔐 Privacy Policy</a>
-      <a href="disclaimer.html">⚠️ Disclaimer</a>
-      <a href="dmca.html">🛡️ DMCA Policy</a>
+      <div class="section">
+        <h4>Support</h4>
+        <a href="about.html">ℹ️ About Us</a>
+        <a class="active" href="contact.html">📩 Contact Us</a>
+        <a href="terms.html">📄 Terms & Conditions</a>
+        <a href="privacy.html">🔐 Privacy Policy</a>
+        <a href="disclaimer.html">⚠️ Disclaimer</a>
+        <a href="dmca.html">🛡️ DMCA Policy</a>
+      </div>
     </nav>
   </aside>
 
   <!-- MAIN CONTENT -->
   <main class="main">
-    <section class="content-page">
 
-      <header class="page-header">
-        <h1>Contact Us</h1>
-        <p class="subtitle">Get in touch with the KalitaVerse team</p>
-      </header>
+    <div class="legal-container">
 
-      <div class="page-section">
-        <p>
-          We’d love to hear from you! Whether you have a question, feedback,
-          suggestion, or need support — our team is here to help.
-        </p>
-      </div>
+      <h1>Contact Us</h1>
 
-      <div class="page-section">
-        <h2>Email Us</h2>
-        <p>
-          For general inquiries, support, or feedback, please email us at:
-        </p>
-        <p class="highlight">
+      <p>
+        We’d love to hear from you! Whether you have a question, feedback,
+        suggestion, or need support — our team is here to help.
+      </p>
+
+      <h2>Email Us</h2>
+      <p>
+        For general inquiries, support, or feedback, please email us at:
+      </p>
+      <p>
+        <strong>
           <a href="mailto:kalitaversememes@gmail.com">
             kalitaversememes@gmail.com
           </a>
-        </p>
-      </div>
+        </strong>
+      </p>
 
-      <div class="page-section">
-        <h2>Response Time</h2>
-        <p>
-          We usually respond within <strong>24–48 hours</strong> on business days.
-          Response times may vary on weekends or holidays.
-        </p>
-      </div>
+      <h2>Response Time</h2>
+      <p>
+        We usually respond within <strong>24–48 hours</strong> on business days.
+        Response times may vary during weekends or holidays.
+      </p>
 
-      <div class="page-section">
-        <h2>What We Can Help With</h2>
-        <ul class="clean-list">
-          <li>Technical support & troubleshooting</li>
-          <li>Content-related questions</li>
-          <li>Account & profile assistance</li>
-          <li>Feedback & feature suggestions</li>
-          <li>Copyright & DMCA inquiries</li>
-          <li>Partnership & collaboration opportunities</li>
-          <li>General platform questions</li>
-        </ul>
-      </div>
+      <h2>What We Can Help With</h2>
+      <ul>
+        <li>Technical support and troubleshooting</li>
+        <li>Content-related questions</li>
+        <li>Account and profile assistance</li>
+        <li>Feedback and feature suggestions</li>
+        <li>Copyright and DMCA inquiries</li>
+        <li>Partnership and collaboration opportunities</li>
+        <li>General questions about our platform</li>
+      </ul>
 
-      <div class="page-section">
-        <h2>Before Contacting Us</h2>
-        <p>
-          You may find answers in our
-          <a href="terms.html"><strong>Terms and Conditions</strong></a>
-          before reaching out.
-        </p>
-      </div>
+      <h2>Before Contacting Us</h2>
+      <p>
+        You may find answers in our
+        <a href="terms.html"><strong>Terms and Conditions</strong></a>
+        before reaching out.
+      </p>
 
-    </section>
+    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -106,9 +105,9 @@
           © <span id="year"></span> KalitaVerse.in. All rights reserved.
         </p>
         <nav class="footer-links">
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
           <a href="disclaimer.html">Disclaimer</a>
           <a href="dmca.html">DMCA</a>
