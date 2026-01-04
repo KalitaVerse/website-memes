@@ -244,3 +244,28 @@ body {
 .footer-links a:hover {
   color: var(--accent);
 }
+/* ======================
+   SUPPORT / LEGAL SECTION DIVIDERS
+   ====================== */
+
+.legal-container h2 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+.legal-container h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 10px;
+  background: linear-gradient(
+    to right,
+    var(--card),
+    var(--card),
+    transparent
+  );
+  opacity: 0.6;
+}
+
