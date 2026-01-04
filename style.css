@@ -121,3 +121,11 @@ body {
   border-radius: 12px;
   min-height: 120px;
 }
+/* Divider between Explore and Support */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--card);
+  margin: 12px 0;
+}
+
