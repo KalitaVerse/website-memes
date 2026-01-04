@@ -11,8 +11,11 @@
 <body>
 
   <!-- Sidebar -->
+<div class="app">
+
+  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="logo">MEMES</div>
+    <h1 class="logo">MEMES</h1>
 
     <nav>
       <a class="active">🏠 Home</a>
@@ -21,70 +24,59 @@
       <a>🎥 Videos</a>
     </nav>
 
-    <div class="section-title">Explore</div>
-    <nav>
+    <div class="section">
+      <h4>Explore</h4>
       <a>Meme Videos</a>
       <a>Templates</a>
       <a>Sound Effects</a>
       <a>News</a>
-    </nav>
+    </div>
   </aside>
 
-  <!-- Main -->
+  <!-- MAIN -->
   <main class="main">
-
-    <!-- Top bar -->
     <header class="topbar">
       <input type="text" placeholder="Search memes..." />
       <button class="signin">Sign in</button>
     </header>
 
-    <!-- Categories -->
+    <!-- CATEGORIES -->
     <div class="categories">
-      <span class="chip active">All</span>
-      <span class="chip">Cat Memes</span>
-      <span class="chip">Dank</span>
-      <span class="chip">Funny</span>
-      <span class="chip">Games</span>
-      <span class="chip">Green Screen</span>
-      <span class="chip">Indian</span>
+      <button class="active">All</button>
+      <button>Cat Memes</button>
+      <button>Dank</button>
+      <button>Funny</button>
+      <button>Games</button>
+      <button>Green Screen</button>
+      <button>Indian</button>
     </div>
 
-    <!-- Meme grid -->
+    <!-- GRID -->
     <section class="grid">
-      <!-- Card -->
       <div class="card">
-        <img src="https://via.placeholder.com/400x600" alt="">
-        <div class="card-info">
-          <h4>Funny Cat Meme</h4>
-          <span>2K views · 1d ago</span>
-        </div>
+        <div class="thumb"></div>
+        <h3>Funny Cat Meme</h3>
+        <p>2k views · 1d ago</p>
       </div>
 
       <div class="card">
-        <video muted>
-          <source src="" type="video/mp4">
-        </video>
-        <div class="card-info">
-          <h4>Viral Meme Video</h4>
-          <span>5K views · 2d ago</span>
-        </div>
+        <div class="thumb"></div>
+        <h3>Viral Meme Video</h3>
+        <p>5k views · 2d ago</p>
       </div>
 
       <div class="card">
-        <img src="https://via.placeholder.com/400x500" alt="">
-        <div class="card-info">
-          <h4>Relatable Meme</h4>
-          <span>1K views · 3d ago</span>
-        </div>
+        <div class="thumb"></div>
+        <h3>Relatable Meme</h3>
+        <p>1k views · 3d ago</p>
       </div>
     </section>
 
-    <div class="load-more">
-      <button>Load More</button>
-    </div>
-
+    <button class="load">Load More</button>
   </main>
+
+</div>
+
 
 </body>
 </html>
