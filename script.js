@@ -6,11 +6,16 @@ const tabLinks = document.querySelectorAll('.sidebar a[data-section]');
 const sections = document.querySelectorAll('.content');
 
 tabLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    const target = link.getAttribute('data-section');
+  link.addEventListener('click', (e) => {
+    const target = link.dataset.section;
+
+    // Safety check
     if (!target) return;
 
-    // Remove active state from all tabs
+    // Prevent page jump
+    e.preventDefault();
+
+    // Remove active states
     tabLinks.forEach(l => l.classList.remove('active'));
     sections.forEach(sec => sec.classList.remove('active'));
 
@@ -19,6 +24,22 @@ tabLinks.forEach(link => {
     const section = document.getElementById(target);
     if (section) section.classList.add('active');
   });
+});
+
+// ==============================
+// ACTIVATE DEFAULT TAB ON LOAD
+// ==============================
+
+window.addEventListener('DOMContentLoaded', () => {
+  const activeTab = document.querySelector('.sidebar a[data-section].active')
+    || document.querySelector('.sidebar a[data-section]');
+
+  if (!activeTab) return;
+
+  const target = activeTab.dataset.section;
+  const section = document.getElementById(target);
+
+  if (section) section.classList.add('active');
 });
 
 
@@ -34,6 +55,8 @@ const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'light') {
   body.classList.add('light');
   body.classList.remove('dark');
+} else {
+  body.classList.add('dark');
 }
 
 // Toggle theme
@@ -42,24 +65,22 @@ if (themeToggle) {
     body.classList.toggle('light');
     body.classList.toggle('dark');
 
-    // Save preference
-    if (body.classList.contains('light')) {
-      localStorage.setItem('theme', 'light');
-    } else {
-      localStorage.setItem('theme', 'dark');
-    }
+    localStorage.setItem(
+      'theme',
+      body.classList.contains('light') ? 'light' : 'dark'
+    );
   });
 }
 
 
 // ==============================
-// OPTIONAL: SEARCH PLACEHOLDER
+// SEARCH PLACEHOLDER (SAFE)
 // ==============================
 
 const searchInput = document.querySelector('.topbar input[type="search"]');
 if (searchInput) {
   searchInput.addEventListener('input', () => {
-    // Future: hook backend search here
+    // Future backend hook
     console.log('Searching:', searchInput.value);
   });
 }
