@@ -5,8 +5,14 @@
   <title>MEMES | KalitaVerse</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
- <link rel="stylesheet" href="style.css?v=3">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./style.css?v=4">
 
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 
 <body class="dark">
@@ -17,21 +23,52 @@
   <aside class="sidebar">
     <h1 class="logo">MEMES</h1>
 
-    <nav class="menu">
+    <nav>
 
       <!-- MAIN NAV -->
-      <a class="active" data-section="home">🏠 Home</a>
-      <a data-section="trending">🔥 Trending</a>
-      <a data-section="images">🖼️ Images</a>
-      <a data-section="videos">🎥 Videos</a>
-      <a data-section="gifs">🎞️ Gifs</a>
+      <a class="active" data-section="home">
+        <span class="icon"><i class="fa-solid fa-house"></i></span>
+        <span class="label">Home</span>
+      </a>
+
+      <a data-section="trending">
+        <span class="icon"><i class="fa-solid fa-fire"></i></span>
+        <span class="label">Trending</span>
+      </a>
+
+      <a data-section="images">
+        <span class="icon"><i class="fa-solid fa-image"></i></span>
+        <span class="label">Images</span>
+      </a>
+
+      <a data-section="videos">
+        <span class="icon"><i class="fa-solid fa-video"></i></span>
+        <span class="label">Videos</span>
+      </a>
+
+      <a data-section="gifs">
+        <span class="icon"><i class="fa-solid fa-photo-film"></i></span>
+        <span class="label">Gifs</span>
+      </a>
 
       <!-- EXPLORE -->
       <div class="section">
         <h4>Explore</h4>
-        <a data-section="templates">📂 Templates</a>
-        <a data-section="sound">🔊 Sound Effects</a>
-        <a data-section="origin">📜 Meme Origin</a>
+
+        <a data-section="templates">
+          <span class="icon"><i class="fa-solid fa-folder"></i></span>
+          <span class="label">Templates</span>
+        </a>
+
+        <a data-section="sound">
+          <span class="icon"><i class="fa-solid fa-volume-high"></i></span>
+          <span class="label">Sound Effects</span>
+        </a>
+
+        <a data-section="origin">
+          <span class="icon"><i class="fa-solid fa-scroll"></i></span>
+          <span class="label">Meme Origin</span>
+        </a>
       </div>
 
       <hr class="divider">
@@ -39,12 +76,36 @@
       <!-- SUPPORT -->
       <div class="section">
         <h4>Support</h4>
-        <a href="about.html">ℹ️ About Us</a>
-        <a href="contact.html">📩 Contact Us</a>
-        <a href="terms.html">📄 Terms & Conditions</a>
-        <a href="privacy.html">🔒 Privacy Policy</a>
-        <a href="disclaimer.html">⚠️ Disclaimer</a>
-        <a href="dmca.html">🛡️ DMCA Policy</a>
+
+        <a href="about.html">
+          <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+          <span class="label">About Us</span>
+        </a>
+
+        <a href="contact.html">
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+          <span class="label">Contact Us</span>
+        </a>
+
+        <a href="terms.html">
+          <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
+          <span class="label">Terms & Conditions</span>
+        </a>
+
+        <a href="privacy.html">
+          <span class="icon"><i class="fa-solid fa-user-shield"></i></span>
+          <span class="label">Privacy Policy</span>
+        </a>
+
+        <a href="disclaimer.html">
+          <span class="icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+          <span class="label">Disclaimer</span>
+        </a>
+
+        <a href="dmca.html">
+          <span class="icon"><i class="fa-solid fa-copyright"></i></span>
+          <span class="label">DMCA Policy</span>
+        </a>
       </div>
 
     </nav>
@@ -117,9 +178,7 @@
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-inner">
-        <p class="copyright">
-          © <span id="year"></span> KalitaVerse.in. All rights reserved.
-        </p>
+        <p>© <span id="year"></span> KalitaVerse.in. All rights reserved.</p>
 
         <nav class="footer-links">
           <a href="about.html">About Us</a>
