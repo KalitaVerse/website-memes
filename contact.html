@@ -8,6 +8,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="dark">
 
 <div class="app">
@@ -31,6 +32,7 @@
       <a href="about.html">ℹ️ About Us</a>
       <a class="active">📩 Contact Us</a>
       <a href="terms.html">📄 Terms & Conditions</a>
+      <a href="privacy.html">🔐 Privacy Policy</a>
       <a href="disclaimer.html">⚠️ Disclaimer</a>
       <a href="dmca.html">🛡️ DMCA Policy</a>
     </nav>
@@ -38,76 +40,87 @@
 
   <!-- MAIN CONTENT -->
   <main class="main">
-    <section class="content active">
+    <section class="content-page">
 
-      <h1>Contact Us</h1>
+      <header class="page-header">
+        <h1>Contact Us</h1>
+        <p class="subtitle">Get in touch with the KalitaVerse team</p>
+      </header>
 
-      <p><strong>Get in Touch</strong></p>
+      <div class="page-section">
+        <p>
+          We’d love to hear from you! Whether you have a question, feedback,
+          suggestion, or need support — our team is here to help.
+        </p>
+      </div>
 
-      <p>
-        We’d love to hear from you! Whether you have a question, feedback, a suggestion,
-        or need support, our team is here to help. Please use the contact information
-        below to reach out to us.
-      </p>
-
-      <h2>Email Us</h2>
-      <p>
-        For general inquiries, support, or feedback, please email us at:
-        <br><br>
-        <strong>
+      <div class="page-section">
+        <h2>Email Us</h2>
+        <p>
+          For general inquiries, support, or feedback, please email us at:
+        </p>
+        <p class="highlight">
           <a href="mailto:kalitaversememes@gmail.com">
             kalitaversememes@gmail.com
           </a>
-        </strong>
-      </p>
+        </p>
+      </div>
 
-      <h2>Response Time</h2>
-      <p>
-        We strive to respond to all inquiries within
-        <strong>24–48 hours</strong> during business days.
-        Response times may vary during weekends and public holidays.
-      </p>
+      <div class="page-section">
+        <h2>Response Time</h2>
+        <p>
+          We usually respond within <strong>24–48 hours</strong> on business days.
+          Response times may vary on weekends or holidays.
+        </p>
+      </div>
 
-      <h2>What We Can Help With</h2>
-      <ul>
-        <li><strong>Technical support</strong> and troubleshooting</li>
-        <li><strong>Content-related</strong> questions</li>
-        <li><strong>Account and profile</strong> assistance</li>
-        <li><strong>Feedback</strong> and feature suggestions</li>
-        <li><strong>Copyright and DMCA</strong> inquiries</li>
-        <li><strong>Partnership</strong> and collaboration opportunities</li>
-        <li><strong>General questions</strong> about our platform</li>
-      </ul>
+      <div class="page-section">
+        <h2>What We Can Help With</h2>
+        <ul class="clean-list">
+          <li>Technical support & troubleshooting</li>
+          <li>Content-related questions</li>
+          <li>Account & profile assistance</li>
+          <li>Feedback & feature suggestions</li>
+          <li>Copyright & DMCA inquiries</li>
+          <li>Partnership & collaboration opportunities</li>
+          <li>General platform questions</li>
+        </ul>
+      </div>
 
-      <h2>Before Contacting Us</h2>
-      <p>
-        Before reaching out, you may find answers to common questions in our
-        <a href="terms.html"><strong>Terms and Conditions</strong></a>.
-      </p>
+      <div class="page-section">
+        <h2>Before Contacting Us</h2>
+        <p>
+          You may find answers in our
+          <a href="terms.html"><strong>Terms and Conditions</strong></a>
+          before reaching out.
+        </p>
+      </div>
 
     </section>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
-  <div class="footer-inner">
-    <p class="copyright">
-      © <span id="year"></span> KalitaVerse.in. All rights reserved.
-    </p>
+      <div class="footer-inner">
+        <p>
+          © <span id="year"></span> KalitaVerse.in. All rights reserved.
+        </p>
+        <nav class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="dmca.html">DMCA</a>
+        </nav>
+      </div>
+    </footer>
 
-    <nav class="footer-links">
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="dmca.html">DMCA</a>
-    </nav>
-  </div>
-</footer>
-
-    
   </main>
-
 </div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
