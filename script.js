@@ -1,20 +1,65 @@
-// Section switching
-document.querySelectorAll(".sidebar a[data-section]").forEach(link => {
-  link.addEventListener("click", () => {
-    document.querySelectorAll(".sidebar a").forEach(a => a.classList.remove("active"));
-    link.classList.add("active");
+// ==============================
+// TAB NAVIGATION (APP SECTIONS)
+// ==============================
 
-    const section = link.dataset.section;
-    document.querySelectorAll(".content").forEach(c => c.classList.remove("active"));
-    document.getElementById(section).classList.add("active");
+const tabLinks = document.querySelectorAll('.sidebar a[data-section]');
+const sections = document.querySelectorAll('.content');
+
+tabLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const target = link.getAttribute('data-section');
+    if (!target) return;
+
+    // Remove active state from all tabs
+    tabLinks.forEach(l => l.classList.remove('active'));
+    sections.forEach(sec => sec.classList.remove('active'));
+
+    // Activate clicked tab
+    link.classList.add('active');
+    const section = document.getElementById(target);
+    if (section) section.classList.add('active');
   });
 });
 
-// Theme toggle
-const toggle = document.getElementById("themeToggle");
+
+// ==============================
+// THEME TOGGLE (DARK / LIGHT)
+// ==============================
+
+const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
-toggle.addEventListener("click", () => {
-  body.classList.toggle("light");
-  toggle.textContent = body.classList.contains("light") ? "🌞" : "🌙";
-});
+// Load saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  body.classList.add('light');
+  body.classList.remove('dark');
+}
+
+// Toggle theme
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    body.classList.toggle('dark');
+
+    // Save preference
+    if (body.classList.contains('light')) {
+      localStorage.setItem('theme', 'light');
+    } else {
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+}
+
+
+// ==============================
+// OPTIONAL: SEARCH PLACEHOLDER
+// ==============================
+
+const searchInput = document.querySelector('.topbar input[type="search"]');
+if (searchInput) {
+  searchInput.addEventListener('input', () => {
+    // Future: hook backend search here
+    console.log('Searching:', searchInput.value);
+  });
+}
