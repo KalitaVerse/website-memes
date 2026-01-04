@@ -5,182 +5,187 @@
   <title>Terms & Conditions | KalitaVerse</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Main stylesheet -->
- <link rel="stylesheet" href="style.css?v=3">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./style.css?v=4">
 
-
-  <style>
-    /* PAGE-SPECIFIC FIXES */
-    .legal-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-      line-height: 1.7;
-    }
-
-    .legal-container h1 {
-      font-size: 32px;
-      margin-bottom: 24px;
-      letter-spacing: 0.5px;
-    }
-
-    .legal-container h2 {
-      font-size: 20px;
-      margin-top: 32px;
-      margin-bottom: 12px;
-    }
-
-    .legal-container p {
-      color: #d1d5db;
-      margin-bottom: 14px;
-    }
-
-    .legal-container ul {
-      margin: 12px 0 20px 20px;
-    }
-
-    .legal-container li {
-      margin-bottom: 8px;
-      color: #d1d5db;
-    }
-
-    .legal-container a {
-      color: #8b5cf6;
-      text-decoration: none;
-    }
-
-    .legal-container a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 
 <body class="dark">
+
 <div class="app">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h1 class="logo">MEMES</h1>
+    <h2 class="logo">MEMES</h2>
 
-    <nav class="menu">
-      <a href="index.html">🏠 Home</a>
-      <a href="index.html#images">🖼️ Images</a>
-      <a href="index.html#videos">🎥 Videos</a>
-      <a href="index.html#gifs">🎞️ Gifs</a>
+    <nav>
+      <a href="index.html">
+        <span class="icon"><i class="fa-solid fa-house"></i></span>
+        <span class="label">Home</span>
+      </a>
+
+      <a href="index.html#images">
+        <span class="icon"><i class="fa-solid fa-image"></i></span>
+        <span class="label">Images</span>
+      </a>
+
+      <a href="index.html#videos">
+        <span class="icon"><i class="fa-solid fa-video"></i></span>
+        <span class="label">Videos</span>
+      </a>
+
+      <a href="index.html#gifs">
+        <span class="icon"><i class="fa-solid fa-photo-film"></i></span>
+        <span class="label">Gifs</span>
+      </a>
+
+      <div class="section">
+        <h4>Explore</h4>
+
+        <a href="index.html#templates">
+          <span class="icon"><i class="fa-solid fa-folder"></i></span>
+          <span class="label">Templates</span>
+        </a>
+
+        <a href="index.html#sound">
+          <span class="icon"><i class="fa-solid fa-volume-high"></i></span>
+          <span class="label">Sound Effects</span>
+        </a>
+
+        <a href="index.html#origin">
+          <span class="icon"><i class="fa-solid fa-scroll"></i></span>
+          <span class="label">Meme Origin</span>
+        </a>
+      </div>
+
+      <div class="section">
+        <h4>Support</h4>
+
+        <a href="about.html">
+          <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+          <span class="label">About Us</span>
+        </a>
+
+        <a href="contact.html">
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+          <span class="label">Contact Us</span>
+        </a>
+
+        <a class="active" href="terms.html">
+          <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
+          <span class="label">Terms & Conditions</span>
+        </a>
+
+        <a href="privacy.html">
+          <span class="icon"><i class="fa-solid fa-user-shield"></i></span>
+          <span class="label">Privacy Policy</span>
+        </a>
+
+        <a href="disclaimer.html">
+          <span class="icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+          <span class="label">Disclaimer</span>
+        </a>
+
+        <a href="dmca.html">
+          <span class="icon"><i class="fa-solid fa-copyright"></i></span>
+          <span class="label">DMCA Policy</span>
+        </a>
+      </div>
     </nav>
-
-    <div class="section">
-      <h4>Explore</h4>
-      <a href="#">Meme Videos</a>
-      <a href="#">Templates</a>
-      <a href="#">Sound Effects</a>
-      <a href="#">Gifs</a>
-      <a href="#">Meme Origin</a>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="section">
-      <h4>Support</h4>
-      <a href="about.html">ℹ️ About Us</a>
-      <a href="contact.html">📩 Contact Us</a>
-      <a class="active" href="terms.html">📄 Terms & Conditions</a>
-      <a href="privacy.html">🔒 Privacy Policy</a>
-      <a href="disclaimer.html">⚠️ Disclaimer</a>
-      <a href="dmca.html">🛡️ DMCA Policy</a>
-    </div>
   </aside>
 
   <!-- MAIN CONTENT -->
   <main class="main">
-    <section class="legal-container">
+
+    <div class="legal-container">
 
       <h1>Terms and Conditions</h1>
 
       <h2>1. Acceptance of Terms</h2>
       <p>
         By accessing and using <strong>KalitaVerse.in</strong>, you agree to be bound by
-        these Terms and Conditions and all applicable laws. If you do not agree,
-        please discontinue use of the service.
+        these Terms and all applicable laws. If you do not agree, please discontinue use.
       </p>
 
       <h2>2. Use License</h2>
       <p>
-        Permission is granted to temporarily access the materials on KalitaVerse.in
-        for personal, non-commercial use only. Under this license, you may not:
+        Permission is granted to temporarily access the materials for personal,
+        non-commercial use only. You may not:
       </p>
       <ul>
-        <li>Modify or copy the materials</li>
-        <li>Use the materials for commercial purposes</li>
-        <li>Attempt to reverse engineer any software</li>
-        <li>Remove copyright or proprietary notices</li>
-        <li>Mirror content on another server</li>
+        <li>Modify or copy materials</li>
+        <li>Use content commercially</li>
+        <li>Reverse engineer software</li>
+        <li>Remove copyright notices</li>
+        <li>Mirror content elsewhere</li>
       </ul>
 
       <h2>3. User Accounts</h2>
       <p>
-        You are responsible for maintaining the confidentiality of your account
-        credentials and all activities under your account.
+        You are responsible for safeguarding your account credentials.
       </p>
 
       <h2>4. User Content</h2>
       <p>
-        You retain ownership of content you submit. By submitting content,
-        you grant KalitaVerse.in a worldwide, royalty-free license to use and distribute it.
+        You retain ownership of your content while granting us a license to use it.
       </p>
 
       <h2>5. Prohibited Activities</h2>
       <ul>
-        <li>Posting illegal or infringing content</li>
-        <li>Impersonating individuals or entities</li>
-        <li>Disrupting site security</li>
-        <li>Unauthorized automated access</li>
-        <li>Collecting user data without consent</li>
+        <li>Illegal or infringing content</li>
+        <li>Impersonation</li>
+        <li>Service disruption</li>
+        <li>Unauthorized automation</li>
+        <li>Unauthorized data collection</li>
       </ul>
 
       <h2>6. Intellectual Property</h2>
       <p>
-        All original content and branding are the intellectual property of KalitaVerse.in
-        and protected by applicable laws.
+        All branding and original content are owned by KalitaVerse.in.
       </p>
 
       <h2>7. Disclaimer</h2>
       <p>
-        The service is provided on an <em>“as is”</em> basis.
-        See our <a href="disclaimer.html">Disclaimer</a> for details.
+        The service is provided <em>“as is”</em>. See our
+        <a href="disclaimer.html">Disclaimer</a>.
       </p>
 
       <h2>8. Limitation of Liability</h2>
       <p>
-        KalitaVerse.in is not liable for any damages arising from the use or inability
-        to use the service.
+        We are not liable for damages arising from use of the service.
       </p>
 
       <h2>9. Termination</h2>
       <p>
-        We reserve the right to terminate access at any time for violations of these terms.
+        Access may be terminated at any time for violations.
       </p>
 
-      <h2>10. Changes to Terms</h2>
+      <h2>10. Changes</h2>
       <p>
-        These Terms may be updated periodically. Changes will be posted on this page.
+        Terms may be updated periodically.
       </p>
 
-      <h2>11. Contact Information</h2>
+      <h2>11. Contact</h2>
       <p>
-        Questions? Email us at
+        Email us at
         <a href="mailto:kalitaversememes@gmail.com">
           kalitaversememes@gmail.com
         </a>
         or visit our <a href="contact.html">Contact Us</a> page.
       </p>
 
-    </section>
+    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-inner">
         <p>© 2026 KalitaVerse.in. All rights reserved.</p>
+
         <nav class="footer-links">
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
@@ -193,7 +198,7 @@
     </footer>
 
   </main>
-
 </div>
+
 </body>
 </html>
