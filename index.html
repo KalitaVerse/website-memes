@@ -2,96 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KalitaVerse Memes</title>
-
+  <title>MEMES</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark">
 
-  <!-- Sidebar -->
 <div class="app">
 
-  <!-- SIDEBAR -->
+  <!-- Sidebar -->
   <aside class="sidebar">
-  <h1 class="logo">MEMES</h1>
+    <h1 class="logo">MEMES</h1>
 
-  <!-- MAIN -->
-  <nav class="menu">
-    <a class="active">🏠 Home</a>
-    <a>🔥 Trending</a>
-    <a>🖼️ Images</a>
-    <a>🎥 Videos</a>
-  </nav>
+    <nav>
+      <a class="active" data-section="home">🏠 Home</a>
+      <a data-section="trending">🔥 Trending</a>
+      <a data-section="images">🖼️ Images</a>
+      <a data-section="videos">🎥 Videos</a>
+      <a data-section="gifs">🎞️ Gifs</a>
 
-  <!-- EXPLORE -->
-  <div class="section">
-    <h4>Explore</h4>
-    <a>Meme Videos</a>
-    <a>Templates</a>
-    <a>Sound Effects</a>
-    <a>🎞️ Gifs</a>
-    <a>📜 Meme Origin</a>
-  </div>
+      <h4>Explore</h4>
+      <a data-section="templates">📂 Templates</a>
+      <a data-section="sound">🔊 Sound Effects</a>
+      <a data-section="origin">📜 Meme Origin</a>
 
-  <!-- SUPPORT -->
-  <div class="section">
-    <h4>Support</h4>
-    <a>About Us</a>
-    <a>Contact Us</a>
-    <a>Terms & Conditions</a>
-    <a>Disclaimer</a>
-    <a>DMCA Policy</a>
-  </div>
-</aside>
+      <h4>Support</h4>
+      <a>ℹ️ About Us</a>
+      <a>📩 Contact Us</a>
+      <a>📄 Terms & Conditions</a>
+      <a>⚠️ Disclaimer</a>
+      <a>🛡️ DMCA Policy</a>
+    </nav>
+  </aside>
 
-
-  <!-- MAIN -->
+  <!-- Main -->
   <main class="main">
     <header class="topbar">
-      <input type="text" placeholder="Search memes..." />
+      <input type="search" placeholder="Search memes..." />
+      <button id="themeToggle">🌙</button>
       <button class="signin">Sign in</button>
     </header>
 
-    <!-- CATEGORIES -->
-    <div class="categories">
-      <button class="active">All</button>
-      <button>Cat Memes</button>
-      <button>Dank</button>
-      <button>Funny</button>
-      <button>Games</button>
-      <button>Green Screen</button>
-      <button>Indian</button>
-    </div>
-
-    <!-- GRID -->
-    <section class="grid">
-      <div class="card">
-        <div class="thumb"></div>
-        <h3>Funny Cat Meme</h3>
-        <p>2k views · 1d ago</p>
-      </div>
-
-      <div class="card">
-        <div class="thumb"></div>
-        <h3>Viral Meme Video</h3>
-        <p>5k views · 2d ago</p>
-      </div>
-
-      <div class="card">
-        <div class="thumb"></div>
-        <h3>Relatable Meme</h3>
-        <p>1k views · 3d ago</p>
+    <!-- Sections -->
+    <section class="content active" id="home">
+      <h2>Home</h2>
+      <div class="grid">
+        <div class="card">Funny Cat Meme</div>
+        <div class="card">Viral Meme Video</div>
+        <div class="card">Relatable Meme</div>
       </div>
     </section>
 
-    <button class="load">Load More</button>
-  </main>
+    <section class="content" id="images">
+      <h2>Images</h2>
+      <div class="grid">
+        <div class="card">Image Meme 1</div>
+        <div class="card">Image Meme 2</div>
+      </div>
+    </section>
 
+    <section class="content" id="videos">
+      <h2>Videos</h2>
+      <div class="grid">
+        <div class="card">Video Meme 1</div>
+        <div class="card">Video Meme 2</div>
+      </div>
+    </section>
+
+    <section class="content" id="gifs">
+      <h2>Gifs</h2>
+      <div class="grid">
+        <div class="card">Gif Meme 1</div>
+        <div class="card">Gif Meme 2</div>
+      </div>
+    </section>
+
+    <section class="content" id="origin">
+      <h2>Meme Origin</h2>
+      <p>Story behind famous memes.</p>
+    </section>
+
+  </main>
 </div>
 
-
+<script src="script.js"></script>
 </body>
 </html>
-
