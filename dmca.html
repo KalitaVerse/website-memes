@@ -6,91 +6,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="./style.css?v=4">
 
-
-  <style>
-    /* LEGAL PAGE LAYOUT */
-    .legal-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-      line-height: 1.7;
-    }
-
-    .legal-container h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .legal-container h2 {
-      font-size: 20px;
-      margin-top: 32px;
-      margin-bottom: 12px;
-    }
-
-    .legal-container p {
-      color: #d1d5db;
-      margin-bottom: 14px;
-    }
-
-    .legal-container ul {
-      margin: 12px 0 20px 22px;
-    }
-
-    .legal-container li {
-      margin-bottom: 8px;
-      color: #d1d5db;
-    }
-
-    .legal-container a {
-      color: #8b5cf6;
-      text-decoration: none;
-    }
-
-    .legal-container a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 
 <body class="dark">
+
 <div class="app">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h1 class="logo">MEMES</h1>
+    <h2 class="logo">MEMES</h2>
 
-    <nav class="menu">
-      <a href="index.html">🏠 Home</a>
-      <a href="index.html#images">🖼️ Images</a>
-      <a href="index.html#videos">🎥 Videos</a>
-      <a href="index.html#gifs">🎞️ Gifs</a>
+    <nav>
+      <a href="index.html">
+        <span class="icon"><i class="fa-solid fa-house"></i></span>
+        <span class="label">Home</span>
+      </a>
+
+      <a href="index.html#images">
+        <span class="icon"><i class="fa-solid fa-image"></i></span>
+        <span class="label">Images</span>
+      </a>
+
+      <a href="index.html#videos">
+        <span class="icon"><i class="fa-solid fa-video"></i></span>
+        <span class="label">Videos</span>
+      </a>
+
+      <a href="index.html#gifs">
+        <span class="icon"><i class="fa-solid fa-photo-film"></i></span>
+        <span class="label">Gifs</span>
+      </a>
+
+      <div class="section">
+        <h4>Explore</h4>
+
+        <a href="index.html#templates">
+          <span class="icon"><i class="fa-solid fa-folder"></i></span>
+          <span class="label">Templates</span>
+        </a>
+
+        <a href="index.html#sound">
+          <span class="icon"><i class="fa-solid fa-volume-high"></i></span>
+          <span class="label">Sound Effects</span>
+        </a>
+
+        <a href="index.html#origin">
+          <span class="icon"><i class="fa-solid fa-scroll"></i></span>
+          <span class="label">Meme Origin</span>
+        </a>
+      </div>
+
+      <div class="section">
+        <h4>Support</h4>
+
+        <a href="about.html">
+          <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+          <span class="label">About Us</span>
+        </a>
+
+        <a href="contact.html">
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+          <span class="label">Contact Us</span>
+        </a>
+
+        <a href="terms.html">
+          <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
+          <span class="label">Terms & Conditions</span>
+        </a>
+
+        <a href="privacy.html">
+          <span class="icon"><i class="fa-solid fa-user-shield"></i></span>
+          <span class="label">Privacy Policy</span>
+        </a>
+
+        <a href="disclaimer.html">
+          <span class="icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+          <span class="label">Disclaimer</span>
+        </a>
+
+        <a class="active" href="dmca.html">
+          <span class="icon"><i class="fa-solid fa-copyright"></i></span>
+          <span class="label">DMCA Policy</span>
+        </a>
+      </div>
     </nav>
-
-    <div class="section">
-      <h4>Explore</h4>
-      <a href="#">Templates</a>
-      <a href="#">Sound Effects</a>
-      <a href="#">Meme Origin</a>
-    </div>
-
-    <hr class="divider">
-
-    <div class="section">
-      <h4>Support</h4>
-      <a href="about.html">ℹ️ About Us</a>
-      <a href="contact.html">📩 Contact Us</a>
-      <a href="terms.html">📄 Terms & Conditions</a>
-      <a href="privacy.html">🔒 Privacy Policy</a>
-      <a href="disclaimer.html">⚠️ Disclaimer</a>
-      <a class="active" href="dmca.html">🛡️ DMCA Policy</a>
-    </div>
   </aside>
 
   <!-- MAIN CONTENT -->
   <main class="main">
-    <section class="legal-container">
+
+    <div class="legal-container">
 
       <h1>DMCA Policy</h1>
 
@@ -104,84 +116,63 @@
 
       <h2>2. Reporting Copyright Infringement</h2>
       <p>
-        If you believe content available on <strong>KalitaVerse.in</strong> infringes your
-        copyright, please submit a written DMCA notice including the following:
+        If you believe content on <strong>KalitaVerse.in</strong> infringes your copyright,
+        please provide the following:
       </p>
       <ul>
         <li>Your physical or electronic signature</li>
         <li>Identification of the copyrighted work</li>
         <li>Identification of the infringing material and its location</li>
-        <li>Your contact information (address, phone number, email)</li>
-        <li>A statement of good-faith belief that the use is unauthorized</li>
-        <li>
-          A statement that the information is accurate and, under penalty of perjury,
-          you are authorized to act on behalf of the copyright owner
-        </li>
+        <li>Your contact information</li>
+        <li>A statement of good-faith belief</li>
+        <li>A statement of accuracy under penalty of perjury</li>
       </ul>
 
       <h2>3. Designated Copyright Agent</h2>
       <p>
-        Please send DMCA takedown requests to:
-      </p>
-      <p>
-        <strong>Email:</strong>
+        Email:
         <a href="mailto:kalitaversememes@gmail.com">
           kalitaversememes@gmail.com
         </a><br>
-        <strong>Subject:</strong> DMCA Takedown Request
+        Subject: <strong>DMCA Takedown Request</strong>
       </p>
 
       <h2>4. Counter-Notification</h2>
       <p>
-        If you believe content was removed in error, you may submit a counter-notification
-        including:
+        If you believe content was removed in error, you may submit a counter-notification.
       </p>
-      <ul>
-        <li>Your physical or electronic signature</li>
-        <li>Identification of the removed material and its prior location</li>
-        <li>
-          A statement under penalty of perjury that the removal was due to mistake
-          or misidentification
-        </li>
-        <li>Your name, address, and telephone number</li>
-        <li>
-          A statement consenting to the jurisdiction of the appropriate federal court
-        </li>
-      </ul>
 
       <h2>5. Repeat Infringers</h2>
       <p>
-        It is our policy to terminate accounts of users who are repeat infringers
-        when appropriate.
+        Accounts of repeat infringers may be terminated.
       </p>
 
       <h2>6. False Claims</h2>
       <p>
-        Under Section 512(f) of the DMCA, anyone who knowingly submits a false claim
-        may be liable for damages.
+        Submitting false claims may result in liability under Section 512(f) of the DMCA.
       </p>
 
       <h2>7. Processing Time</h2>
       <p>
-        We aim to respond to valid DMCA requests within
-        <strong>48–72 hours</strong>, though processing time may vary.
+        We aim to respond within <strong>48–72 hours</strong>.
       </p>
 
-      <h2>8. Contact Information</h2>
+      <h2>8. Contact Us</h2>
       <p>
-        Questions regarding this DMCA Policy can be sent to
+        Contact us at
         <a href="mailto:kalitaversememes@gmail.com">
           kalitaversememes@gmail.com
         </a>
         or via our <a href="contact.html">Contact Us</a> page.
       </p>
 
-    </section>
+    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-inner">
         <p>© 2026 KalitaVerse.in. All rights reserved.</p>
+
         <nav class="footer-links">
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
@@ -194,7 +185,7 @@
     </footer>
 
   </main>
-
 </div>
+
 </body>
 </html>
