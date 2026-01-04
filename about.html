@@ -6,10 +6,15 @@
   <title>About Us – KalitaVerse</title>
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="./style.css?v=3">
 
+  <!-- Font Awesome (icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
-<body>
+<body class="dark">
 
 <div class="app">
 
@@ -23,18 +28,23 @@
       <a href="index.html#videos"><i class="fa-solid fa-video"></i> Videos</a>
       <a href="index.html#gifs"><i class="fa-solid fa-photo-film"></i> Gifs</a>
 
-      <p class="nav-title">Support</p>
-      <a class="active" href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
-      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
-      <a href="terms.html"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a>
-      <a href="privacy.html"><i class="fa-solid fa-user-shield"></i> Privacy Policy</a>
-      <a href="disclaimer.html"><i class="fa-solid fa-triangle-exclamation"></i> Disclaimer</a>
-      <a href="dmca.html"><i class="fa-solid fa-copyright"></i> DMCA Policy</a>
+      <div class="section">
+        <h4>Support</h4>
+        <a class="active" href="about.html">
+          <i class="fa-solid fa-circle-info"></i> About Us
+        </a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+        <a href="terms.html"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a>
+        <a href="privacy.html"><i class="fa-solid fa-user-shield"></i> Privacy Policy</a>
+        <a href="disclaimer.html"><i class="fa-solid fa-triangle-exclamation"></i> Disclaimer</a>
+        <a href="dmca.html"><i class="fa-solid fa-copyright"></i> DMCA Policy</a>
+      </div>
     </nav>
   </aside>
 
   <!-- MAIN CONTENT -->
-  <main class="content">
+  <!-- ❌ NOT class="content" -->
+  <main class="main">
 
     <div class="legal-container">
 
