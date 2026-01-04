@@ -2,42 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About Us | KalitaVerse</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – KalitaVerse</title>
 
-  <!-- Reuse same CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark">
+<body>
 
 <div class="app">
 
-  <!-- SIDEBAR (same as index.html) -->
+  <!-- SIDEBAR (unchanged structure) -->
   <aside class="sidebar">
-    <h1 class="logo">MEMES</h1>
+    <h2 class="logo">MEMES</h2>
 
     <nav>
-      <a href="index.html">🏠 Home</a>
-      <a href="index.html#images">🖼️ Images</a>
-      <a href="index.html#videos">🎥 Videos</a>
-      <a href="index.html#gifs">🎞️ Gifs</a>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#"><i class="fa-solid fa-image"></i> Images</a>
+      <a href="#"><i class="fa-solid fa-video"></i> Videos</a>
+      <a href="#"><i class="fa-solid fa-photo-film"></i> Gifs</a>
 
-      <h4>Support</h4>
-      <a class="active">ℹ️ About Us</a>
-      <a href="contact.html">📩 Contact Us</a>
-      <a href="terms.html">📄 Terms & Conditions</a>
-      <a href="disclaimer.html">⚠️ Disclaimer</a>
-      <a href="dmca.html">🛡️ DMCA Policy</a>
+      <p class="nav-title">Support</p>
+      <a class="active" href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      <a href="terms.html"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a>
+      <a href="privacy.html"><i class="fa-solid fa-user-shield"></i> Privacy Policy</a>
+      <a href="disclaimer.html"><i class="fa-solid fa-triangle-exclamation"></i> Disclaimer</a>
+      <a href="dmca.html"><i class="fa-solid fa-copyright"></i> DMCA Policy</a>
     </nav>
   </aside>
 
   <!-- MAIN CONTENT -->
-  <main class="main">
-    <section class="content active">
+  <main class="content">
+
+    <article class="policy">
 
       <h1>About Us</h1>
 
-      <p><strong>Welcome to KalitaVerse.in</strong></p>
+      <p class="lead">
+        <strong>Welcome to KalitaVerse.in</strong>
+      </p>
 
       <p>
         KalitaVerse.in is your ultimate destination for discovering, downloading,
@@ -55,7 +64,7 @@
 
       <h2>What We Offer</h2>
       <ul>
-        <li><strong>Meme Videos:</strong> Download trending viral videos</li>
+        <li><strong>Meme Videos:</strong> Download trending and viral videos</li>
         <li><strong>GIFs:</strong> Animated GIFs for social media</li>
         <li><strong>Sound Effects:</strong> Popular meme audio clips</li>
         <li><strong>Meme Templates:</strong> Create your own memes</li>
@@ -67,14 +76,14 @@
       <ul>
         <li><strong>Quality:</strong> Only the best content</li>
         <li><strong>Accessibility:</strong> Free and easy access</li>
-        <li><strong>Innovation:</strong> Constant improvements</li>
+        <li><strong>Innovation:</strong> Constant improvement</li>
         <li><strong>Community:</strong> Built for meme lovers</li>
       </ul>
 
       <h2>Contact Us</h2>
       <p>
         Have questions or feedback?
-        Visit our <a href="contact.html"><strong>Contact Us</strong></a> page.
+        Visit our <a href="contact.html">Contact Us</a> page.
       </p>
 
       <h2>Thank You</h2>
@@ -83,24 +92,11 @@
         We appreciate your support and look forward to bringing you more content.
       </p>
 
-    </section>
-    
- <footer class="site-footer">
-  <div class="footer-inner">
-    <p class="copyright">
-      © <span id="year"></span> KalitaVerse.in. All rights reserved.
-    </p>
+    </article>
 
-    <nav class="footer-links">
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="dmca.html">DMCA</a>
-    </nav>
-  </div>
-</footer>
+    <footer class="footer">
+      © 2026 KalitaVerse.in · All rights reserved
+    </footer>
 
   </main>
 
