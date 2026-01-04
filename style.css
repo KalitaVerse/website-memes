@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0e0e0f;
+  color: #e5e7eb;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #111;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ff2d2d;
+  margin-bottom: 24px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #d1d5db;
+  cursor: pointer;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #1f2933;
+}
+
+.section-title {
+  margin: 24px 0 8px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px 28px;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.topbar input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: #18181b;
+  border: none;
+  color: white;
+}
+
+.signin {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+/* Categories */
+.categories {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #18181b;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chip.active {
+  background: #2563eb;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img,
+.card video {
+  width: 100%;
+  display: block;
+}
+
+.card-info {
+  padding: 10px;
+}
+
+.card-info h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.card-info span {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Load more */
+.load-more {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.load-more button {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #1f2933;
+  color: white;
+  cursor: pointer;
+}
+
