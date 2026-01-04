@@ -2,51 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MEMES</title>
+  <title>MEMES | KalitaVerse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="dark">
 
 <div class="app">
 
-  <!-- Sidebar -->
+  <!-- SIDEBAR -->
   <aside class="sidebar">
     <h1 class="logo">MEMES</h1>
 
-    <nav>
+    <nav class="menu">
+
+      <!-- MAIN NAV -->
       <a class="active" data-section="home">🏠 Home</a>
       <a data-section="trending">🔥 Trending</a>
       <a data-section="images">🖼️ Images</a>
       <a data-section="videos">🎥 Videos</a>
       <a data-section="gifs">🎞️ Gifs</a>
 
-      <h4>Explore</h4>
-      <a data-section="templates">📂 Templates</a>
-      <a data-section="sound">🔊 Sound Effects</a>
-      <a data-section="origin">📜 Meme Origin</a>
+      <!-- EXPLORE -->
+      <div class="section">
+        <h4>Explore</h4>
+        <a data-section="templates">📂 Templates</a>
+        <a data-section="sound">🔊 Sound Effects</a>
+        <a data-section="origin">📜 Meme Origin</a>
+      </div>
 
-   <hr class="divider">
-      
-      <h4>Support</h4>
-      <a href="about.html">ℹ️ About Us</a>
-      <a href="contact.html">📩 Contact Us</a>
-      <a href="terms.html">📄 Terms & Conditions</a>
-      <a href="privacy.html">🔒 Privacy Policy</a>
-      <a href="disclaimer.html">⚠️ Disclaimer</a>
-      <a href="dmca.html">🛡️ DMCA Policy</a>
+      <hr class="divider">
+
+      <!-- SUPPORT -->
+      <div class="section">
+        <h4>Support</h4>
+        <a href="about.html">ℹ️ About Us</a>
+        <a href="contact.html">📩 Contact Us</a>
+        <a href="terms.html">📄 Terms & Conditions</a>
+        <a href="privacy.html">🔒 Privacy Policy</a>
+        <a href="disclaimer.html">⚠️ Disclaimer</a>
+        <a href="dmca.html">🛡️ DMCA Policy</a>
+      </div>
 
     </nav>
   </aside>
 
-  <!-- Main -->
+  <!-- MAIN CONTENT -->
   <main class="main">
+
+    <!-- TOP BAR -->
     <header class="topbar">
       <input type="search" placeholder="Search memes..." />
-      <button id="themeToggle">🌙</button>
-      <button class="signin">Sign in</button>
+      <div class="top-actions">
+        <button id="themeToggle" title="Toggle theme">🌙</button>
+        <button class="signin">Sign in</button>
+      </div>
     </header>
 
-    <!-- Sections -->
+    <!-- HOME -->
     <section class="content active" id="home">
       <h2>Home</h2>
       <div class="grid">
@@ -56,6 +71,16 @@
       </div>
     </section>
 
+    <!-- TRENDING -->
+    <section class="content" id="trending">
+      <h2>Trending</h2>
+      <div class="grid">
+        <div class="card">🔥 Trending Meme 1</div>
+        <div class="card">🔥 Trending Meme 2</div>
+      </div>
+    </section>
+
+    <!-- IMAGES -->
     <section class="content" id="images">
       <h2>Images</h2>
       <div class="grid">
@@ -64,6 +89,7 @@
       </div>
     </section>
 
+    <!-- VIDEOS -->
     <section class="content" id="videos">
       <h2>Videos</h2>
       <div class="grid">
@@ -72,6 +98,7 @@
       </div>
     </section>
 
+    <!-- GIFS -->
     <section class="content" id="gifs">
       <h2>Gifs</h2>
       <div class="grid">
@@ -80,32 +107,37 @@
       </div>
     </section>
 
+    <!-- MEME ORIGIN -->
     <section class="content" id="origin">
       <h2>Meme Origin</h2>
       <p>Story behind famous memes.</p>
     </section>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
-  <div class="footer-inner">
-    <p class="copyright">
-      © <span id="year"></span> KalitaVerse.in. All rights reserved.
-    </p>
+      <div class="footer-inner">
+        <p class="copyright">
+          © <span id="year"></span> KalitaVerse.in. All rights reserved.
+        </p>
 
-    <nav class="footer-links">
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="dmca.html">DMCA</a>
-    </nav>
-  </div>
-</footer>
-
+        <nav class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="dmca.html">DMCA</a>
+        </nav>
+      </div>
+    </footer>
 
   </main>
 </div>
 
 <script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
