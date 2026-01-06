@@ -1,92 +1,279 @@
-// Exit if not on index page (safety guard)
-if (!document.querySelector('.content')) {
-  console.warn('Tab navigation disabled (not index.html)');
-  return;
+/* ======================
+   THEME VARIABLES
+   ====================== */
+
+:root {
+  --bg: #0f0f0f;
+  --panel: #161616;
+  --card: #1e1e1e;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --accent: #3b82f6;
 }
 
-/* ==============================
-   TAB NAVIGATION & DEEP LINKING (FIXED)
-   ============================== */
+body.light {
+  --bg: #f5f6fa;
+  --panel: #ffffff;
+  --card: #f0f0f0;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+}
 
-// Sections (only exist on index.html)
-const sections = document.querySelectorAll('.content');
+/* ======================
+   GLOBAL RESET
+   ====================== */
 
-// Sidebar links that control tabs
-const tabLinks = document.querySelectorAll('.sidebar a[data-section]');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
-// Activate a tab by id
-function activateTab(targetId) {
-  const targetSection = document.getElementById(targetId);
-  const targetLink = document.querySelector(
-    `.sidebar a[data-section="${targetId}"]`
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease; /* ✨ polish */
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ======================
+   SIDEBAR
+   ====================== */
+
+.sidebar {
+  width: 230px;
+  background: var(--panel);
+  padding: 20px;
+}
+
+.logo {
+  color: #ff3b3b;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* Links */
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+
+  transition: background 0.15s ease; /* ✨ polish */
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: var(--card);
+}
+
+/* Section headers */
+.sidebar h4 {
+  margin: 16px 0 6px;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--card);
+  margin: 12px 0;
+}
+
+/* ======================
+   MAIN AREA
+   ====================== */
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ======================
+   TOP BAR
+   ====================== */
+
+.topbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.topbar input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: none;
+  background: var(--card);
+  color: var(--text);
+}
+
+.topbar button {
+  background: var(--card);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.signin {
+  border: 1px solid var(--accent);
+}
+
+/* ======================
+   CONTENT SECTIONS
+   ====================== */
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 120px;
+
+  transition: transform 0.15s ease; /* ✨ polish */
+}
+
+.card:hover {
+  transform: translateY(-2px); /* ✨ polish */
+}
+
+/* ======================
+   LEGAL / SUPPORT PAGES
+   ====================== */
+
+.legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  line-height: 1.7;
+}
+
+.legal-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.legal-container h2 {
+  font-size: 20px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  border-left: 4px solid var(--accent);
+  padding-left: 12px;
+}
+
+.legal-container h3 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.legal-container p,
+.legal-container li {
+  color: var(--muted);
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.legal-container ul {
+  margin-left: 22px;
+}
+
+.legal-container a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.legal-container a:hover {
+  text-decoration: underline;
+}
+
+/* ======================
+   FOOTER
+   ====================== */
+
+.site-footer {
+  margin-top: 40px;
+  padding: 24px 0;
+  border-top: 1px solid var(--card);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* ======================
+   SUPPORT / LEGAL SECTION DIVIDERS
+   ====================== */
+
+.legal-container h2 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+.legal-container h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(
+    to right,
+    var(--card),
+    var(--card),
+    transparent
   );
-
-  if (!targetSection || !targetLink) return;
-
-  // Clear active states
-  tabLinks.forEach(l => l.classList.remove('active'));
-  sections.forEach(sec => sec.classList.remove('active'));
-
-  // Activate target
-  targetLink.classList.add('active');
-  targetSection.classList.add('active');
-}
-
-// Handle hash safely (for refresh & back/forward)
-function handleHash() {
-  const hash = window.location.hash.replace('#', '');
-  activateTab(hash || 'home');
-}
-
-/* 🔑 IMPORTANT FIX
-   Delay hash reading so browser restores it first
-*/
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(handleHash, 0);
-});
-
-// Handle browser back / forward
-window.addEventListener('hashchange', handleHash);
-
-/* ==============================
-   CLICK HANDLING (DO NOT BLOCK NAVIGATION)
-   ============================== */
-
-tabLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    const target = link.dataset.section;
-    if (!target) return;
-
-    // Update URL hash (browser handles navigation)
-    window.location.hash = target;
-  });
-});
-
-/* ==============================
-   THEME TOGGLE (UNCHANGED)
-   ============================== */
-
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
-
-// Load saved theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-  body.classList.add('light');
-  body.classList.remove('dark');
-} else {
-  body.classList.add('dark');
-  body.classList.remove('light');
-}
-
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light');
-    body.classList.toggle('dark');
-
-    localStorage.setItem(
-      'theme',
-      body.classList.contains('light') ? 'light' : 'dark'
-    );
-  });
+  opacity: 0.8;
 }
