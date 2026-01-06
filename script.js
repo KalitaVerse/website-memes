@@ -1,9 +1,3 @@
-// Exit if not on index page (safety guard)
-if (!document.querySelector('.content')) {
-  console.warn('Tab navigation disabled (not index.html)');
-  return;
-}
-
 /* ==============================
    TAB NAVIGATION & DEEP LINKING (FIXED)
    ============================== */
