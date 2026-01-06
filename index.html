@@ -2,98 +2,202 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>MEMES | KalitaVerse</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KalitaVerse — Memes, GIFs & Viral Content</title>
 
-  <!-- SEO -->
-  <meta name="description" content="KalitaVerse is your destination for viral memes, GIFs, meme videos, sound effects, and internet culture." />
-  <meta name="keywords" content="memes, gifs, viral videos, meme sounds, kalitaverse" />
-  <meta name="author" content="KalitaVerse" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./style.css?v=5">
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
-<body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="logo">KalitaVerse</h1>
-      <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Support</a>
-        <a href="terms.html">Terms</a>
-      </nav>
-    </div>
-  </header>
+<body class="dark">
 
-  <!-- ================= MAIN ================= -->
-  <main class="container">
+<div class="app">
 
-    <!-- HERO -->
-    <section class="hero">
-      <h2>Internet Culture. Simple. Clean.</h2>
-      <p>
-        Discover, download, and enjoy viral memes, GIFs, videos, and sound effects —
-        curated for creators and everyday fun.
-      </p>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h1 class="logo">MEMES</h1>
+
+    <nav>
+
+      <!-- MAIN NAV -->
+      <a class="active" data-section="home">
+        <span class="icon"><i class="fa-solid fa-house"></i></span>
+        <span class="label">Home</span>
+      </a>
+
+      <a data-section="trending">
+        <span class="icon"><i class="fa-solid fa-fire"></i></span>
+        <span class="label">Trending</span>
+      </a>
+
+      <a data-section="images">
+        <span class="icon"><i class="fa-solid fa-image"></i></span>
+        <span class="label">Images</span>
+      </a>
+
+      <a data-section="videos">
+        <span class="icon"><i class="fa-solid fa-video"></i></span>
+        <span class="label">Videos</span>
+      </a>
+
+      <a data-section="gifs">
+        <span class="icon"><i class="fa-solid fa-photo-film"></i></span>
+        <span class="label">Gifs</span>
+      </a>
+
+      <!-- EXPLORE -->
+      <div class="section">
+        <h4>Explore</h4>
+
+        <a data-section="templates">
+          <span class="icon"><i class="fa-solid fa-folder"></i></span>
+          <span class="label">Templates</span>
+        </a>
+
+        <a data-section="sound">
+          <span class="icon"><i class="fa-solid fa-volume-high"></i></span>
+          <span class="label">Sound Effects</span>
+        </a>
+
+        <a data-section="origin">
+          <span class="icon"><i class="fa-solid fa-scroll"></i></span>
+          <span class="label">Meme Origin</span>
+        </a>
+      </div>
+
+      <hr class="divider">
+
+      <!-- SUPPORT -->
+      <div class="section">
+        <h4>Support</h4>
+
+        <a href="about.html">
+          <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+          <span class="label">About Us</span>
+        </a>
+
+        <a href="contact.html">
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+          <span class="label">Contact Us</span>
+        </a>
+
+        <a href="terms.html">
+          <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
+          <span class="label">Terms & Conditions</span>
+        </a>
+
+        <a href="privacy.html">
+          <span class="icon"><i class="fa-solid fa-user-shield"></i></span>
+          <span class="label">Privacy Policy</span>
+        </a>
+
+        <a href="disclaimer.html">
+          <span class="icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+          <span class="label">Disclaimer</span>
+        </a>
+
+        <a href="dmca.html">
+          <span class="icon"><i class="fa-solid fa-copyright"></i></span>
+          <span class="label">DMCA Policy</span>
+        </a>
+      </div>
+
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <input type="search" placeholder="Search memes..." />
+      <div class="top-actions">
+        <button id="themeToggle" title="Toggle theme">🌙</button>
+        <button class="signin">Sign in</button>
+      </div>
+    </header>
+
+    <!-- HOME -->
+    <section class="content active" id="home">
+      <h2>Home</h2>
+      <div class="grid">
+        <div class="card">Funny Cat Meme</div>
+        <div class="card">Viral Meme Video</div>
+        <div class="card">Relatable Meme</div>
+      </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="features">
-
-      <div class="feature-card">
-        <i class="fa-solid fa-video feature-icon"></i>
-        <h3>Meme Videos</h3>
-        <p>Short, viral clips ready for sharing and editing.</p>
+    <!-- TRENDING -->
+    <section class="content" id="trending">
+      <h2>Trending</h2>
+      <div class="grid">
+        <div class="card">🔥 Trending Meme 1</div>
+        <div class="card">🔥 Trending Meme 2</div>
       </div>
-
-      <div class="feature-card">
-        <i class="fa-solid fa-image feature-icon"></i>
-        <h3>GIFs</h3>
-        <p>Reaction GIFs and trending animations.</p>
-      </div>
-
-      <div class="feature-card">
-        <i class="fa-solid fa-volume-high feature-icon"></i>
-        <h3>Sounds</h3>
-        <p>Meme sound effects and audio clips.</p>
-      </div>
-
-      <div class="feature-card">
-        <i class="fa-solid fa-layer-group feature-icon"></i>
-        <h3>Templates</h3>
-        <p>Clean meme templates for creators.</p>
-      </div>
-
     </section>
 
-    <!-- INFO -->
-    <section class="info">
-      <h3>Why KalitaVerse?</h3>
-      <p>
-        We focus on simplicity, speed, and quality.
-        No clutter. No distractions. Just content that matters.
-      </p>
+    <!-- IMAGES -->
+    <section class="content" id="images">
+      <h2>Images</h2>
+      <div class="grid">
+        <div class="card">Image Meme 1</div>
+        <div class="card">Image Meme 2</div>
+      </div>
     </section>
+
+    <!-- VIDEOS -->
+    <section class="content" id="videos">
+      <h2>Videos</h2>
+      <div class="grid">
+        <div class="card">Video Meme 1</div>
+        <div class="card">Video Meme 2</div>
+      </div>
+    </section>
+
+    <!-- GIFS -->
+    <section class="content" id="gifs">
+      <h2>Gifs</h2>
+      <div class="grid">
+        <div class="card">Gif Meme 1</div>
+        <div class="card">Gif Meme 2</div>
+      </div>
+    </section>
+
+    <!-- MEME ORIGIN -->
+    <section class="content" id="origin">
+      <h2>Meme Origin</h2>
+      <p>Story behind famous memes.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> KalitaVerse.in. All rights reserved.</p>
+
+        <nav class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="dmca.html">DMCA</a>
+        </nav>
+      </div>
+    </footer>
 
   </main>
+</div>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 KalitaVerse. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="dmca.html">DMCA</a>
-      </div>
-    </div>
-  </footer>
+<script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
