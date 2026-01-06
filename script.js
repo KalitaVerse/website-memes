@@ -1,69 +1,70 @@
-// ==============================
-// TAB NAVIGATION (HOME PAGE ONLY)
-// ==============================
+/* ==============================
+   TAB + DEEP LINK SYSTEM (FINAL)
+   ============================== */
 
-const tabLinks = document.querySelectorAll('.sidebar a[data-section]');
-const sections = document.querySelectorAll('.content');
+// All tab sections
+const sections = document.querySelectorAll(".content");
 
-tabLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
+// All sidebar links that point to hashes
+const links = document.querySelectorAll(".sidebar a[href*='#']");
 
-    const target = link.dataset.section;
-    if (!target) return;
+function activateSection(sectionId) {
+  // Remove active state from all sections and links
+  sections.forEach(section => section.classList.remove("active"));
+  links.forEach(link => link.classList.remove("active"));
 
-    tabLinks.forEach(l => l.classList.remove('active'));
-    sections.forEach(sec => sec.classList.remove('active'));
+  // Activate the target section
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.classList.add("active");
+  }
 
-    link.classList.add('active');
-    const section = document.getElementById(target);
-    if (section) section.classList.add('active');
-  });
-});
-
-// ==============================
-// THEME TOGGLE
-// ==============================
-
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
-
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-  body.classList.add('light');
-} else {
-  body.classList.add('dark');
+  // Activate the matching sidebar link
+  const activeLink = document.querySelector(
+    `.sidebar a[href$="#${sectionId}"]`
+  );
+  if (activeLink) {
+    activeLink.classList.add("active");
+  }
 }
 
+function handleHashChange() {
+  const hash = window.location.hash.replace("#", "");
+  activateSection(hash || "home");
+}
+
+// Run on initial page load
+window.addEventListener("DOMContentLoaded", handleHashChange);
+
+// Run on browser back / forward
+window.addEventListener("hashchange", handleHashChange);
+
+/* ==============================
+   THEME TOGGLE
+   ============================== */
+
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+  body.classList.add("light");
+  body.classList.remove("dark");
+} else {
+  body.classList.add("dark");
+  body.classList.remove("light");
+}
+
+// Toggle theme
 if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light');
-    body.classList.toggle('dark');
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light");
+    body.classList.toggle("dark");
 
     localStorage.setItem(
-      'theme',
-      body.classList.contains('light') ? 'light' : 'dark'
+      "theme",
+      body.classList.contains("light") ? "light" : "dark"
     );
   });
 }
-// ==============================
-// HANDLE URL HASH ON LOAD
-// ==============================
-window.addEventListener('DOMContentLoaded', () => {
-  const hash = window.location.hash.substring(1); // Remove the '#'
-  
-  if (hash) {
-    const targetLink = document.querySelector(`.sidebar a[data-section="${hash}"]`);
-    const targetSection = document.getElementById(hash);
-
-    if (targetLink && targetSection) {
-      // Remove active class from defaults
-      tabLinks.forEach(l => l.classList.remove('active'));
-      sections.forEach(sec => sec.classList.remove('active'));
-
-      // Activate the specific tab and section
-      targetLink.classList.add('active');
-      targetSection.classList.add('active');
-    }
-  }
-});
