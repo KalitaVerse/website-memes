@@ -269,3 +269,48 @@ body {
   opacity: 0.8;
 }
 
+/* ======================
+   ICON FIXES (GLOBAL)
+   ====================== */
+
+/* Font Awesome reset */
+i.fa-solid,
+i.fa-regular,
+i.fa-brands {
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar icons */
+.sidebar nav a i {
+  font-size: 16px;
+  width: 18px;
+  text-align: center;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* Active / hover sidebar icons */
+.sidebar nav a:hover i,
+.sidebar nav a.active i {
+  color: var(--text);
+}
+
+/* Feature / card icons */
+.feature-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+  color: var(--accent);
+}
+
+/* Card alignment fix */
+.feature-card {
+  text-align: left;
+}
+
+/* Light mode icon tweak */
+body.light .feature-icon {
+  color: var(--accent);
+}
