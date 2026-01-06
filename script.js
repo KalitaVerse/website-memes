@@ -1,70 +1,48 @@
-/* ==============================
-   TAB + DEEP LINK SYSTEM (FINAL)
-   ============================== */
+// ==============================
+// TAB NAVIGATION (HOME PAGE ONLY)
+// ==============================
 
-// All tab sections
-const sections = document.querySelectorAll(".content");
+const tabLinks = document.querySelectorAll('.sidebar a[data-section]');
+const sections = document.querySelectorAll('.content');
 
-// All sidebar links that point to hashes
-const links = document.querySelectorAll(".sidebar a[href*='#']");
+tabLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
 
-function activateSection(sectionId) {
-  // Remove active state from all sections and links
-  sections.forEach(section => section.classList.remove("active"));
-  links.forEach(link => link.classList.remove("active"));
+    const target = link.dataset.section;
+    if (!target) return;
 
-  // Activate the target section
-  const section = document.getElementById(sectionId);
-  if (section) {
-    section.classList.add("active");
-  }
+    tabLinks.forEach(l => l.classList.remove('active'));
+    sections.forEach(sec => sec.classList.remove('active'));
 
-  // Activate the matching sidebar link
-  const activeLink = document.querySelector(
-    `.sidebar a[href$="#${sectionId}"]`
-  );
-  if (activeLink) {
-    activeLink.classList.add("active");
-  }
-}
+    link.classList.add('active');
+    const section = document.getElementById(target);
+    if (section) section.classList.add('active');
+  });
+});
 
-function handleHashChange() {
-  const hash = window.location.hash.replace("#", "");
-  activateSection(hash || "home");
-}
+// ==============================
+// THEME TOGGLE
+// ==============================
 
-// Run on initial page load
-window.addEventListener("DOMContentLoaded", handleHashChange);
-
-// Run on browser back / forward
-window.addEventListener("hashchange", handleHashChange);
-
-/* ==============================
-   THEME TOGGLE
-   ============================== */
-
-const themeToggle = document.getElementById("themeToggle");
+const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
-// Load saved theme
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  body.classList.add("light");
-  body.classList.remove("dark");
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  body.classList.add('light');
 } else {
-  body.classList.add("dark");
-  body.classList.remove("light");
+  body.classList.add('dark');
 }
 
-// Toggle theme
 if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    body.classList.toggle("light");
-    body.classList.toggle("dark");
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    body.classList.toggle('dark');
 
     localStorage.setItem(
-      "theme",
-      body.classList.contains("light") ? "light" : "dark"
+      'theme',
+      body.classList.contains('light') ? 'light' : 'dark'
     );
   });
 }
