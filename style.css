@@ -34,6 +34,7 @@ body.light {
 body {
   background: var(--bg);
   color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease; /* ✨ polish */
 }
 
 .app {
@@ -70,8 +71,9 @@ body {
   color: var(--text);
   text-decoration: none;
   font-size: 14px;
-
   white-space: nowrap;
+
+  transition: background 0.15s ease; /* ✨ polish */
 }
 
 .sidebar nav a:hover,
@@ -160,6 +162,12 @@ body {
   padding: 20px;
   border-radius: 12px;
   min-height: 120px;
+
+  transition: transform 0.15s ease; /* ✨ polish */
+}
+
+.card:hover {
+  transform: translateY(-2px); /* ✨ polish */
 }
 
 /* ======================
@@ -244,6 +252,7 @@ body {
 .footer-links a:hover {
   color: var(--accent);
 }
+
 /* ======================
    SUPPORT / LEGAL SECTION DIVIDERS
    ====================== */
