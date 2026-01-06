@@ -46,3 +46,26 @@ if (themeToggle) {
     );
   });
 }
+// ==============================
+// DEEP LINK / HASH FIX
+// ==============================
+
+function loadSectionFromHash() {
+  const hash = window.location.hash.replace("#", "");
+
+  if (!hash) return;
+
+  const targetLink = document.querySelector(
+    `.sidebar a[data-section="${hash}"]`
+  );
+
+  if (targetLink) {
+    targetLink.click();
+  }
+}
+
+// Run on page load
+window.addEventListener("DOMContentLoaded", loadSectionFromHash);
+
+// Run when hash changes (back/forward buttons)
+window.addEventListener("hashchange", loadSectionFromHash);
