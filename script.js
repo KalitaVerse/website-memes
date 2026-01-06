@@ -47,25 +47,23 @@ if (themeToggle) {
   });
 }
 // ==============================
-// DEEP LINK / HASH FIX
+// HANDLE URL HASH ON LOAD
 // ==============================
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.substring(1); // Remove the '#'
+  
+  if (hash) {
+    const targetLink = document.querySelector(`.sidebar a[data-section="${hash}"]`);
+    const targetSection = document.getElementById(hash);
 
-function loadSectionFromHash() {
-  const hash = window.location.hash.replace("#", "");
+    if (targetLink && targetSection) {
+      // Remove active class from defaults
+      tabLinks.forEach(l => l.classList.remove('active'));
+      sections.forEach(sec => sec.classList.remove('active'));
 
-  if (!hash) return;
-
-  const targetLink = document.querySelector(
-    `.sidebar a[data-section="${hash}"]`
-  );
-
-  if (targetLink) {
-    targetLink.click();
+      // Activate the specific tab and section
+      targetLink.classList.add('active');
+      targetSection.classList.add('active');
+    }
   }
-}
-
-// Run on page load
-window.addEventListener("DOMContentLoaded", loadSectionFromHash);
-
-// Run when hash changes (back/forward buttons)
-window.addEventListener("hashchange", loadSectionFromHash);
+});
