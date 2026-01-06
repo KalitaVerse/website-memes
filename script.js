@@ -1,60 +1,76 @@
-// ==============================
-// TAB NAVIGATION & DEEP LINKING
-// ==============================
+/* ==============================
+   TAB NAVIGATION & DEEP LINKING (FIXED)
+   ============================== */
 
-const tabLinks = document.querySelectorAll('.sidebar a[data-section]');
+// Sections (only exist on index.html)
 const sections = document.querySelectorAll('.content');
 
-// 1. Handle Clicks
-tabLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    activateTab(link.dataset.section);
-  });
-});
+// Sidebar links that control tabs
+const tabLinks = document.querySelectorAll('.sidebar a[data-section]');
 
-// 2. Handle Page Load (Fixes the "Always Home" bug)
-window.addEventListener('DOMContentLoaded', () => {
-  // Get the hash without the '#' (e.g., "images", "trending")
-  const hash = window.location.hash.substring(1);
-  
-  if (hash) {
-    activateTab(hash);
-  } else {
-    // Default to home if no hash exists
-    activateTab('home');
-  }
-});
-
-// Helper function to switch tabs
+// Activate a tab by id
 function activateTab(targetId) {
   const targetSection = document.getElementById(targetId);
-  const targetLink = document.querySelector(`.sidebar a[data-section="${targetId}"]`);
+  const targetLink = document.querySelector(
+    `.sidebar a[data-section="${targetId}"]`
+  );
 
   if (!targetSection || !targetLink) return;
 
-  // Remove active class from all
+  // Clear active states
   tabLinks.forEach(l => l.classList.remove('active'));
   sections.forEach(sec => sec.classList.remove('active'));
 
-  // Add active class to target
+  // Activate target
   targetLink.classList.add('active');
   targetSection.classList.add('active');
 }
 
-// ==============================
-// THEME TOGGLE
-// ==============================
+// Handle hash safely (for refresh & back/forward)
+function handleHash() {
+  const hash = window.location.hash.replace('#', '');
+  activateTab(hash || 'home');
+}
+
+/* 🔑 IMPORTANT FIX
+   Delay hash reading so browser restores it first
+*/
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(handleHash, 0);
+});
+
+// Handle browser back / forward
+window.addEventListener('hashchange', handleHash);
+
+/* ==============================
+   CLICK HANDLING (DO NOT BLOCK NAVIGATION)
+   ============================== */
+
+tabLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const target = link.dataset.section;
+    if (!target) return;
+
+    // Update URL hash (browser handles navigation)
+    window.location.hash = target;
+  });
+});
+
+/* ==============================
+   THEME TOGGLE (UNCHANGED)
+   ============================== */
 
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
-// Check saved theme on load
+// Load saved theme
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'light') {
   body.classList.add('light');
+  body.classList.remove('dark');
 } else {
   body.classList.add('dark');
+  body.classList.remove('light');
 }
 
 if (themeToggle) {
