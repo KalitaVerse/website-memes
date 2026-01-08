@@ -277,11 +277,3 @@ body {
   );
   opacity: 0.8;
 }
-/* Logo (MEMES) clickable styling */
-.logo {
-  color: red;
-  font-size: 28px;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-}
