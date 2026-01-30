@@ -1,10 +1,10 @@
-// Sections (only exist on index.html)
-const sections = document.querySelectorAll('.content');
+// ==============================
+// SECTION / TAB HANDLING
+// ==============================
 
-// Sidebar links that control tabs
-const tabLinks = document.querySelectorAll('.sidebar a[data-section]');
+const sections = document.querySelectorAll(".content");
+const tabLinks = document.querySelectorAll(".sidebar a[data-section]");
 
-// Activate a tab by id
 function activateTab(targetId) {
   const targetSection = document.getElementById(targetId);
   const targetLink = document.querySelector(
@@ -13,75 +13,67 @@ function activateTab(targetId) {
 
   if (!targetSection || !targetLink) return;
 
-  // Clear active states
-  tabLinks.forEach(l => l.classList.remove('active'));
-  sections.forEach(sec => sec.classList.remove('active'));
+  tabLinks.forEach(l => l.classList.remove("active"));
+  sections.forEach(sec => sec.classList.remove("active"));
 
-  // Activate target
-  targetLink.classList.add('active');
-  targetSection.classList.add('active');
+  targetLink.classList.add("active");
+  targetSection.classList.add("active");
 }
 
-// Handle hash safely (for refresh & back/forward)
 function handleHash() {
-  const hash = window.location.hash.replace('#', '');
-  activateTab(hash || 'home');
+  const hash = window.location.hash.replace("#", "");
+  activateTab(hash || "home");
 }
 
-/* 🔑 IMPORTANT FIX
-   Delay hash reading so browser restores it first
-*/
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   setTimeout(handleHash, 0);
 });
 
-// Handle browser back / forward
-window.addEventListener('hashchange', handleHash);
-
+window.addEventListener("hashchange", handleHash);
 
 tabLinks.forEach(link => {
-  link.addEventListener('click', () => {
+  link.addEventListener("click", () => {
     const target = link.dataset.section;
     if (!target) return;
-
-    // Update URL hash (browser handles navigation)
     window.location.hash = target;
   });
 });
 
+// ==============================
+// THEME TOGGLE
+// ==============================
 
-const themeToggle = document.getElementById('themeToggle');
+const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
-// Load saved theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-  body.classList.add('light');
-  body.classList.remove('dark');
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+  body.classList.add("light");
+  body.classList.remove("dark");
 } else {
-  body.classList.add('dark');
-  body.classList.remove('light');
+  body.classList.add("dark");
+  body.classList.remove("light");
 }
 
 if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light');
-    body.classList.toggle('dark');
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light");
+    body.classList.toggle("dark");
 
     localStorage.setItem(
-      'theme',
-      body.classList.contains('light') ? 'light' : 'dark'
+      "theme",
+      body.classList.contains("light") ? "light" : "dark"
     );
   });
 }
 
-/* ==============================
-   MEME API INTEGRATION
-   ============================== */
+// ==============================
+// MEME API
+// ==============================
 
 const API_URL = "https://meme-backend-311j.onrender.com/api/memes";
 
-// Call API and load memes
+// Fetch memes
 async function fetchMemes() {
   try {
     const res = await fetch(API_URL);
@@ -92,7 +84,7 @@ async function fetchMemes() {
   }
 }
 
-// Render memes into home section
+// Render memes
 function renderMemes(memes) {
   const container = document.getElementById("meme-container");
   if (!container) return;
@@ -106,15 +98,24 @@ function renderMemes(memes) {
     card.innerHTML = `
       <img src="${meme.imageUrl}" alt="${meme.title}">
       <h3>${meme.title}</h3>
+
+      <button class="like-btn" data-id="${meme._id}">
+        ❤️ <span>${meme.likes ?? 0}</span>
+      </button>
     `;
 
     container.appendChild(card);
   });
+}
+
+// ==============================
+// LIKE BUTTON HANDLER (GLOBAL)
+// ==============================
 
 document.addEventListener("click", async (e) => {
-  if (!e.target.closest(".like-btn")) return;
-
   const btn = e.target.closest(".like-btn");
+  if (!btn) return;
+
   const memeId = btn.dataset.id;
 
   try {
@@ -124,16 +125,11 @@ document.addEventListener("click", async (e) => {
     );
 
     const updated = await res.json();
-
     btn.querySelector("span").textContent = updated.likes;
   } catch (err) {
     console.error("Like failed", err);
   }
 });
 
-}
-
-
-// Load memes when page loads
+// Load memes on page load
 window.addEventListener("load", fetchMemes);
-
