@@ -99,9 +99,11 @@ function renderMemes(memes) {
       <img src="${meme.imageUrl}" alt="${meme.title}">
       <h3>${meme.title}</h3>
 
-      <button class="like-btn" data-id="${meme._id}">
-        ❤️ <span>${meme.likes ?? 0}</span>
-      </button>
+     <button class="like-btn" data-id="${meme._id}">
+  <i class="fa-regular fa-thumbs-up"></i>
+  <span>${meme.likes ?? 0}</span>
+</button>
+
     `;
 
     container.appendChild(card);
