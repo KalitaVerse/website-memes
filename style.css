@@ -58,7 +58,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Sidebar links */
 .sidebar nav a {
   display: flex;
   align-items: center;
@@ -78,7 +77,6 @@ body {
   background: var(--card);
 }
 
-/* Sidebar section headers */
 .sidebar h4 {
   margin: 16px 0 6px;
   font-size: 12px;
@@ -101,6 +99,7 @@ body {
 .main {
   flex: 1;
   padding: 20px;
+  padding-bottom: 80px; /* ✅ prevents footer overlap */
 }
 
 /* ======================
@@ -156,18 +155,19 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 18px;
   align-items: stretch;
+  margin-bottom: 60px; /* ✅ footer spacing */
 }
 
 .card {
   background: var(--card);
   border-radius: 14px;
-  padding: 14px;
+  padding: 12px;
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 
-  min-height: 260px;
+  min-height: 320px;
   justify-content: space-between;
 
   transition: transform 0.15s ease;
@@ -177,19 +177,10 @@ body {
   transform: translateY(-3px);
 }
 
-.card {
-  background: var(--card);
-  border-radius: 14px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .card img {
   width: 100%;
-  height: 240px;          /* fixed height */
-  object-fit: cover;     /* crop a bit */
+  height: 240px;
+  object-fit: cover;
   border-radius: 10px;
   background: #000;
 }
@@ -199,6 +190,11 @@ body {
   font-weight: 600;
   text-align: center;
 }
+
+/* ======================
+   LIKE BUTTON
+   ====================== */
+
 .like-btn {
   margin-top: 6px;
   align-self: center;
@@ -209,8 +205,8 @@ body {
 
   border-radius: 18px;
   padding: 6px 12px;
-
   font-size: 13px;
+
   cursor: pointer;
 
   display: flex;
@@ -231,18 +227,17 @@ body {
   border-color: #3b82f6;
 }
 
-/* Optional: when liked later */
+/* Liked state */
 .like-btn.liked {
   color: #3b82f6;
   border-color: #3b82f6;
 }
+
 .like-btn.liked i {
   font-family: "Font Awesome 6 Free";
-  font-weight: 900; /* solid icon */
+  font-weight: 900;
   color: #3b82f6;
-
-
-
+}
 
 /* ======================
    LEGAL / SUPPORT PAGES
@@ -285,29 +280,11 @@ body {
   opacity: 0.8;
 }
 
-.legal-container h3 {
-  font-size: 16px;
-  margin-top: 20px;
-}
-
 .legal-container p,
 .legal-container li {
   color: var(--muted);
   margin-bottom: 14px;
   font-size: 15px;
-}
-
-.legal-container ul {
-  margin-left: 22px;
-}
-
-.legal-container a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.legal-container a:hover {
-  text-decoration: underline;
 }
 
 /* ======================
@@ -320,6 +297,7 @@ body {
   border-top: 1px solid var(--card);
   color: var(--muted);
   font-size: 14px;
+  clear: both;
 }
 
 .footer-inner {
