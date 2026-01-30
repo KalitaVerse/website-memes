@@ -34,7 +34,7 @@ body.light {
 body {
   background: var(--bg);
   color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease; /* ✨ polish */
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .app {
@@ -58,22 +58,19 @@ body {
   margin-bottom: 20px;
 }
 
-/* Links */
+/* Sidebar links */
 .sidebar nav a {
   display: flex;
   align-items: center;
   gap: 10px;
-
   padding: 10px 12px;
   margin-bottom: 4px;
   border-radius: 8px;
-
   color: var(--text);
   text-decoration: none;
   font-size: 14px;
   white-space: nowrap;
-
-  transition: background 0.15s ease; /* ✨ polish */
+  transition: background 0.15s ease;
 }
 
 .sidebar nav a:hover,
@@ -81,7 +78,7 @@ body {
   background: var(--card);
 }
 
-/* Section headers */
+/* Sidebar section headers */
 .sidebar h4 {
   margin: 16px 0 6px;
   font-size: 12px;
@@ -90,7 +87,6 @@ body {
   letter-spacing: 0.08em;
 }
 
-/* Divider */
 .divider {
   border: none;
   height: 1px;
@@ -151,6 +147,10 @@ body {
   display: block;
 }
 
+/* ======================
+   GRID & CARDS
+   ====================== */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -158,18 +158,45 @@ body {
   align-items: stretch;
 }
 
-
 .card {
   background: var(--card);
-  padding: 20px;
-  border-radius: 12px;
-  min-height: 120px;
+  border-radius: 14px;
+  padding: 14px;
 
-  transition: transform 0.15s ease; /* ✨ polish */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  min-height: 260px;
+  justify-content: space-between;
+
+  transition: transform 0.15s ease;
 }
 
 .card:hover {
-  transform: translateY(-2px); /* ✨ polish */
+  transform: translateY(-3px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #000;
+}
+
+.card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.card p {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
 }
 
 /* ======================
@@ -191,9 +218,26 @@ body {
 .legal-container h2 {
   font-size: 20px;
   margin-top: 32px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   border-left: 4px solid var(--accent);
   padding-left: 12px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.legal-container h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(
+    to right,
+    var(--card),
+    var(--card),
+    transparent
+  );
+  opacity: 0.8;
 }
 
 .legal-container h3 {
@@ -254,52 +298,3 @@ body {
 .footer-links a:hover {
   color: var(--accent);
 }
-
-/* ======================
-   SUPPORT / LEGAL SECTION DIVIDERS
-   ====================== */
-
-.legal-container h2 {
-  position: relative;
-  padding-bottom: 12px;
-  margin-bottom: 18px;
-}
-
-.legal-container h2::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  margin-top: 10px;
-  background: linear-gradient(
-    to right,
-    var(--card),
-    var(--card),
-    transparent
-  );
-  opacity: 0.8;
-}
-
-
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 14px; /* slightly tighter for images */
-}
-
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  background: #000;
-}
-
-.card h3 {
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  color: var(--text);
-}
-
