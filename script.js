@@ -129,6 +129,11 @@ document.addEventListener("click", async (e) => {
     );
 
     const updated = await res.json();
+    btn.querySelector("span").textContent = updated.likes;
+
+// OPTIONAL: refresh trending
+fetchTrendingMemes();
+
 
     btn.querySelector("span").textContent = updated.likes;
     btn.classList.add("liked"); // 👈 visual feedback
@@ -136,7 +141,46 @@ document.addEventListener("click", async (e) => {
     console.error("Like failed", err);
   }
 });
+const TRENDING_API =
+  "https://meme-backend-311j.onrender.com/api/memes/trending";
+async function fetchTrendingMemes() {
+  try {
+    const res = await fetch(TRENDING_API);
+    const memes = await res.json();
+    renderTrending(memes);
+  } catch (err) {
+    console.error("Failed to fetch trending memes", err);
+  }
+}
+function renderTrending(memes) {
+  const container = document.querySelector("#trending .grid");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  memes.forEach(meme => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${meme.imageUrl}" alt="${meme.title}">
+      <h3>${meme.title}</h3>
+
+      <button class="like-btn" data-id="${meme._id}">
+        <i class="fa-regular fa-thumbs-up"></i>
+        <span>${meme.likes}</span>
+      </button>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
 
 
 // Load memes on page load
-window.addEventListener("load", fetchMemes);
+window.addEventListener("load", () => {
+  fetchMemes();          // Home
+  fetchTrendingMemes();  // Trending
+});
+
