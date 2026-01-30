@@ -110,6 +110,27 @@ function renderMemes(memes) {
 
     container.appendChild(card);
   });
+
+document.addEventListener("click", async (e) => {
+  if (!e.target.closest(".like-btn")) return;
+
+  const btn = e.target.closest(".like-btn");
+  const memeId = btn.dataset.id;
+
+  try {
+    const res = await fetch(
+      `https://meme-backend-311j.onrender.com/api/memes/${memeId}/like`,
+      { method: "PATCH" }
+    );
+
+    const updated = await res.json();
+
+    btn.querySelector("span").textContent = updated.likes;
+  } catch (err) {
+    console.error("Like failed", err);
+  }
+});
+
 }
 
 
