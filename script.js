@@ -113,12 +113,14 @@ function renderMemes(memes) {
 // ==============================
 // LIKE BUTTON HANDLER (GLOBAL)
 // ==============================
-
 document.addEventListener("click", async (e) => {
-  const btn = e.target.closest(".like-btn");
-  if (!btn) return;
+  if (!e.target.closest(".like-btn")) return;
 
+  const btn = e.target.closest(".like-btn");
   const memeId = btn.dataset.id;
+
+  // prevent double-like
+  if (btn.classList.contains("liked")) return;
 
   try {
     const res = await fetch(
@@ -127,11 +129,14 @@ document.addEventListener("click", async (e) => {
     );
 
     const updated = await res.json();
+
     btn.querySelector("span").textContent = updated.likes;
+    btn.classList.add("liked"); // 👈 visual feedback
   } catch (err) {
     console.error("Like failed", err);
   }
 });
+
 
 // Load memes on page load
 window.addEventListener("load", fetchMemes);
