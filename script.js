@@ -1,7 +1,3 @@
-/* ==============================
-   TAB NAVIGATION & DEEP LINKING (FIXED)
-   ============================== */
-
 // Sections (only exist on index.html)
 const sections = document.querySelectorAll('.content');
 
@@ -42,9 +38,6 @@ window.addEventListener('DOMContentLoaded', () => {
 // Handle browser back / forward
 window.addEventListener('hashchange', handleHash);
 
-/* ==============================
-   CLICK HANDLING (DO NOT BLOCK NAVIGATION)
-   ============================== */
 
 tabLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -56,9 +49,6 @@ tabLinks.forEach(link => {
   });
 });
 
-/* ==============================
-   THEME TOGGLE (UNCHANGED)
-   ============================== */
 
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
@@ -84,3 +74,44 @@ if (themeToggle) {
     );
   });
 }
+
+/* ==============================
+   MEME API INTEGRATION
+   ============================== */
+
+const API_URL = "https://meme-backend-311j.onrender.com/api/memes";
+
+// Call API and load memes
+async function fetchMemes() {
+  try {
+    const res = await fetch(API_URL);
+    const memes = await res.json();
+    renderMemes(memes);
+  } catch (err) {
+    console.error("Failed to fetch memes", err);
+  }
+}
+
+// Render memes into home section
+function renderMemes(memes) {
+  const container = document.getElementById("meme-container");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  memes.forEach(meme => {
+    const card = document.createElement("div");
+    card.className = "meme-card";
+
+    card.innerHTML = `
+      <img src="${meme.imageUrl}" alt="${meme.title}">
+      <h3>${meme.title}</h3>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+// Load memes when page loads
+window.addEventListener("load", fetchMemes);
+
