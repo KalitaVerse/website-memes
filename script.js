@@ -18,11 +18,6 @@ function activateTab(targetId) {
 
   targetLink.classList.add("active");
   targetSection.classList.add("active");
-
-  // 🔥 FIX: load trending when tab opens
-  if (targetId === "trending") {
-    fetchTrendingMemes();
-  }
 }
 
 function handleHash() {
@@ -52,7 +47,13 @@ const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
 const savedTheme = localStorage.getItem("theme");
-body.classList.add(savedTheme === "light" ? "light" : "dark");
+if (savedTheme === "light") {
+  body.classList.add("light");
+  body.classList.remove("dark");
+} else {
+  body.classList.add("dark");
+  body.classList.remove("light");
+}
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
@@ -75,7 +76,7 @@ const TRENDING_API =
   "https://meme-backend-311j.onrender.com/api/memes/trending";
 
 // ==============================
-// FETCH MEMES (HOME)
+// FETCH HOME MEMES
 // ==============================
 
 async function fetchMemes() {
@@ -95,7 +96,22 @@ function renderHome(memes) {
   container.innerHTML = "";
 
   memes.forEach(meme => {
-    container.appendChild(createCard(meme));
+    const liked = localStorage.getItem(`liked_${meme._id}`);
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${meme.imageUrl}" alt="${meme.title}">
+      <h3>${meme.title}</h3>
+
+      <button class="like-btn ${liked ? "liked" : ""}" data-id="${meme._id}">
+        <i class="fa-${liked ? "solid" : "regular"} fa-thumbs-up"></i>
+        <span>${meme.likes ?? 0}</span>
+      </button>
+    `;
+
+    container.appendChild(card);
   });
 }
 
@@ -120,31 +136,23 @@ function renderTrending(memes) {
   container.innerHTML = "";
 
   memes.forEach(meme => {
-    container.appendChild(createCard(meme));
+    const liked = localStorage.getItem(`liked_${meme._id}`);
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${meme.imageUrl}" alt="${meme.title}">
+      <h3>${meme.title}</h3>
+
+      <button class="like-btn ${liked ? "liked" : ""}" data-id="${meme._id}">
+        <i class="fa-${liked ? "solid" : "regular"} fa-thumbs-up"></i>
+        <span>${meme.likes}</span>
+      </button>
+    `;
+
+    container.appendChild(card);
   });
-}
-
-// ==============================
-// CARD TEMPLATE (REUSED)
-// ==============================
-
-function createCard(meme) {
-  const card = document.createElement("div");
-  card.className = "card";
-
-  const liked = localStorage.getItem(`liked_${meme._id}`);
-
-  card.innerHTML = `
-    <img src="${meme.imageUrl}" alt="${meme.title}">
-    <h3>${meme.title}</h3>
-
-    <button class="like-btn ${liked ? "liked" : ""}" data-id="${meme._id}">
-      <i class="fa-${liked ? "solid" : "regular"} fa-thumbs-up"></i>
-      <span>${meme.likes ?? 0}</span>
-    </button>
-  `;
-
-  return card;
 }
 
 // ==============================
@@ -157,11 +165,12 @@ document.addEventListener("click", async (e) => {
 
   const memeId = btn.dataset.id;
 
+  // prevent multiple likes
   if (localStorage.getItem(`liked_${memeId}`)) return;
 
   try {
     const res = await fetch(`${API_URL}/${memeId}/like`, {
-      method: "PATCH",
+      method: "PATCH"
     });
 
     const updated = await res.json();
@@ -170,12 +179,14 @@ document.addEventListener("click", async (e) => {
     btn.classList.add("liked");
 
     const icon = btn.querySelector("i");
-    icon.classList.replace("fa-regular", "fa-solid");
+    icon.classList.remove("fa-regular");
+    icon.classList.add("fa-solid");
 
     localStorage.setItem(`liked_${memeId}`, "true");
 
-    // 🔥 keep trending live
+    // refresh trending instantly
     fetchTrendingMemes();
+
   } catch (err) {
     console.error("Like failed", err);
   }
@@ -186,6 +197,6 @@ document.addEventListener("click", async (e) => {
 // ==============================
 
 window.addEventListener("load", () => {
-  fetchMemes(); // Home
-  fetchTrendingMemes(); // Preload trending
+  fetchMemes();          // Home
+  fetchTrendingMemes();  // Trending
 });
