@@ -94,7 +94,7 @@ async function fetchMemes() {
 
 // Render memes into home section
 function renderMemes(memes) {
-  const container = document.getElementById("memeGrid");
+  const container = document.getElementById("meme-container");
   if (!container) return;
 
   container.innerHTML = "";
@@ -111,6 +111,7 @@ function renderMemes(memes) {
     container.appendChild(card);
   });
 }
+
 
 // Load memes when page loads
 window.addEventListener("load", fetchMemes);
