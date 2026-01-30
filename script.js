@@ -94,14 +94,14 @@ async function fetchMemes() {
 
 // Render memes into home section
 function renderMemes(memes) {
-  const container = document.getElementById("meme-container");
+  const container = document.getElementById("memeGrid");
   if (!container) return;
 
   container.innerHTML = "";
 
   memes.forEach(meme => {
     const card = document.createElement("div");
-    card.className = "meme-card";
+    card.className = "card";
 
     card.innerHTML = `
       <img src="${meme.imageUrl}" alt="${meme.title}">
