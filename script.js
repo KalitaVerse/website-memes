@@ -23,7 +23,9 @@ function activateTab(targetId) {
 function handleHash() {
   const hash = window.location.hash.replace("#", "");
   activateTab(hash || "home");
+  window.scrollTo(0, 0); // ✅ force top
 }
+
 
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(handleHash, 0);
@@ -32,12 +34,17 @@ window.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("hashchange", handleHash);
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // ✅ STOP PAGE SCROLL
+
     const target = link.dataset.section;
     if (!target) return;
-    window.location.hash = target;
+
+    activateTab(target);      // switch section
+    history.pushState(null, "", `#${target}`); // update URL without jump
   });
 });
+
 
 // ==============================
 // THEME TOGGLE
