@@ -18,6 +18,11 @@ function activateTab(targetId) {
 
   targetLink.classList.add("active");
   targetSection.classList.add("active");
+
+  // 🔥 FIX: load trending when tab opens
+  if (targetId === "trending") {
+    fetchTrendingMemes();
+  }
 }
 
 function handleHash() {
@@ -47,13 +52,7 @@ const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  body.classList.add("light");
-  body.classList.remove("dark");
-} else {
-  body.classList.add("dark");
-  body.classList.remove("light");
-}
+body.classList.add(savedTheme === "light" ? "light" : "dark");
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
@@ -83,35 +82,20 @@ async function fetchMemes() {
   try {
     const res = await fetch(API_URL);
     const memes = await res.json();
-    renderMemes(memes);
+    renderHome(memes);
   } catch (err) {
     console.error("Failed to fetch memes", err);
   }
 }
 
-function renderMemes(memes) {
-  const container = document.getElementById("meme-container");
+function renderHome(memes) {
+  const container = document.getElementById("home-container");
   if (!container) return;
 
   container.innerHTML = "";
 
   memes.forEach(meme => {
-    const liked = localStorage.getItem(`liked_${meme._id}`);
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <img src="${meme.imageUrl}" alt="${meme.title}">
-      <h3>${meme.title}</h3>
-
-      <button class="like-btn ${liked ? "liked" : ""}" data-id="${meme._id}">
-        <i class="${liked ? "fa-solid" : "fa-regular"} fa-thumbs-up"></i>
-        <span>${meme.likes ?? 0}</span>
-      </button>
-    `;
-
-    container.appendChild(card);
+    container.appendChild(createCard(meme));
   });
 }
 
@@ -130,29 +114,37 @@ async function fetchTrendingMemes() {
 }
 
 function renderTrending(memes) {
-  const container = document.querySelector("#trending .grid");
+  const container = document.getElementById("trending-container");
   if (!container) return;
 
   container.innerHTML = "";
 
   memes.forEach(meme => {
-    const liked = localStorage.getItem(`liked_${meme._id}`);
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <img src="${meme.imageUrl}" alt="${meme.title}">
-      <h3>${meme.title}</h3>
-
-      <button class="like-btn ${liked ? "liked" : ""}" data-id="${meme._id}">
-        <i class="${liked ? "fa-solid" : "fa-regular"} fa-thumbs-up"></i>
-        <span>${meme.likes ?? 0}</span>
-      </button>
-    `;
-
-    container.appendChild(card);
+    container.appendChild(createCard(meme));
   });
+}
+
+// ==============================
+// CARD TEMPLATE (REUSED)
+// ==============================
+
+function createCard(meme) {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const liked = localStorage.getItem(`liked_${meme._id}`);
+
+  card.innerHTML = `
+    <img src="${meme.imageUrl}" alt="${meme.title}">
+    <h3>${meme.title}</h3>
+
+    <button class="like-btn ${liked ? "liked" : ""}" data-id="${meme._id}">
+      <i class="fa-${liked ? "solid" : "regular"} fa-thumbs-up"></i>
+      <span>${meme.likes ?? 0}</span>
+    </button>
+  `;
+
+  return card;
 }
 
 // ==============================
@@ -165,30 +157,25 @@ document.addEventListener("click", async (e) => {
 
   const memeId = btn.dataset.id;
 
-  // prevent multiple likes per session
   if (localStorage.getItem(`liked_${memeId}`)) return;
 
   try {
-    const res = await fetch(
-      `${API_URL}/${memeId}/like`,
-      { method: "PATCH" }
-    );
+    const res = await fetch(`${API_URL}/${memeId}/like`, {
+      method: "PATCH",
+    });
 
     const updated = await res.json();
 
-    // update UI
     btn.querySelector("span").textContent = updated.likes;
     btn.classList.add("liked");
 
     const icon = btn.querySelector("i");
-    icon.classList.remove("fa-regular");
-    icon.classList.add("fa-solid");
+    icon.classList.replace("fa-regular", "fa-solid");
 
     localStorage.setItem(`liked_${memeId}`, "true");
 
-    // refresh trending immediately
+    // 🔥 keep trending live
     fetchTrendingMemes();
-
   } catch (err) {
     console.error("Like failed", err);
   }
@@ -199,6 +186,6 @@ document.addEventListener("click", async (e) => {
 // ==============================
 
 window.addEventListener("load", () => {
-  fetchMemes();          // Home
-  fetchTrendingMemes();  // Trending
+  fetchMemes(); // Home
+  fetchTrendingMemes(); // Preload trending
 });
