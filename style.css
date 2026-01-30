@@ -200,22 +200,43 @@ body {
   text-align: center;
 }
 .like-btn {
+  margin-top: auto;
+  align-self: center;
+
   background: transparent;
-  border: none;
-  color: var(--text);
+  border: 1px solid #2a2a2a;
+  color: #d1d5db;
+
+  border-radius: 18px;
+  padding: 6px 12px;
+
+  font-size: 13px;
   cursor: pointer;
-  font-size: 14px;
-  margin-top: 6px;
+
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 6px;
-  opacity: 0.85;
+
+  transition: all 0.2s ease;
 }
 
-.like-btn:hover {
-  opacity: 1;
-  transform: scale(1.05);
+.like-btn i {
+  font-size: 14px;
 }
+
+/* Hover */
+.like-btn:hover {
+  background: #1f2937;
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+/* Optional: when liked later */
+.like-btn.liked {
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
 
 
 /* ======================
