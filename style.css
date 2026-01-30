@@ -199,6 +199,24 @@ body {
   font-weight: 600;
   text-align: center;
 }
+.like-btn {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0.85;
+}
+
+.like-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 
 /* ======================
    LEGAL / SUPPORT PAGES
