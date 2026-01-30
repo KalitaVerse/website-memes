@@ -200,7 +200,7 @@ body {
   text-align: center;
 }
 .like-btn {
-  margin-top: auto;
+  margin-top: 6px;
   align-self: center;
 
   background: transparent;
@@ -236,6 +236,11 @@ body {
   color: #3b82f6;
   border-color: #3b82f6;
 }
+.like-btn.liked i {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900; /* solid icon */
+  color: #3b82f6;
+
 
 
 
