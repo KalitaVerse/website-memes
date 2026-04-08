@@ -23,7 +23,7 @@ function activateTab(targetId) {
 function handleHash() {
   const hash = window.location.hash.replace("#", "");
   activateTab(hash || "home");
-  window.scrollTo(0, 0); // ✅ force top
+  window.scrollTo(0, 0); 
 }
 
 
@@ -35,13 +35,13 @@ window.addEventListener("hashchange", handleHash);
 
 tabLinks.forEach(link => {
   link.addEventListener("click", (e) => {
-    e.preventDefault(); // ✅ STOP PAGE SCROLL
+    e.preventDefault();
 
     const target = link.dataset.section;
     if (!target) return;
 
-    activateTab(target);      // switch section
-    history.pushState(null, "", `#${target}`); // update URL without jump
+    activateTab(target);      
+    history.pushState(null, "", `#${target}`); 
   });
 });
 
@@ -190,8 +190,7 @@ document.addEventListener("click", async (e) => {
     icon.classList.add("fa-solid");
 
     localStorage.setItem(`liked_${memeId}`, "true");
-
-    // refresh trending instantly
+    
     fetchTrendingMemes();
 
   } catch (err) {
