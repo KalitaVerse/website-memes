@@ -99,7 +99,7 @@ body {
 .main {
   flex: 1;
   padding: 20px;
-  padding-bottom: 80px; /* ✅ prevents footer overlap */
+  padding-bottom: 80px;
 }
 
 /* ======================
@@ -155,7 +155,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 18px;
   align-items: stretch;
-  margin-bottom: 60px; /* ✅ footer spacing */
+  margin-bottom: 60px; 
 }
 
 .card {
