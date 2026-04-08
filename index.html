@@ -4,187 +4,475 @@
   <meta charset="UTF-8" />
   <title>MEMES | KalitaVerse</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="./style.css?v=5">
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
 </head>
 
-<body class="dark">
-
+<body>
 <div class="app">
 
+  <!-- ── SIDEBAR ───────────────────────────── -->
   <aside class="sidebar">
-   
-    <h1 class="logo">MEMES</h1>
+    <div class="logo-wrap">
+      <div class="logo">MEME<span>S</span></div>
+      <div class="logo-sub">KalitaVerse.in</div>
+    </div>
 
     <nav>
-
-      <a href="index.html#home" data-section="home">
+      <a href="#" class="active" data-section="home">
         <span class="icon"><i class="fa-solid fa-house"></i></span>
         <span class="label">Home</span>
       </a>
-
-     <a href="index.html#trending" data-section="trending">
+      <a href="#" data-section="trending">
         <span class="icon"><i class="fa-solid fa-fire"></i></span>
         <span class="label">Trending</span>
       </a>
-
-     <a href="index.html#images" data-section="images">
+      <a href="#" data-section="images">
         <span class="icon"><i class="fa-solid fa-image"></i></span>
         <span class="label">Images</span>
       </a>
-
-     <a href="index.html#videos" data-section="videos">
+      <a href="#" data-section="videos">
         <span class="icon"><i class="fa-solid fa-video"></i></span>
         <span class="label">Videos</span>
       </a>
-
-      <a href="index.html#gifs" data-section="gifs">
+      <a href="#" data-section="gifs">
         <span class="icon"><i class="fa-solid fa-photo-film"></i></span>
-        <span class="label">Gifs</span>
+        <span class="label">GIFs</span>
       </a>
 
-      <div class="section">
-        <h4>Explore</h4>
+      <h4>Explore</h4>
 
-        <a href="index.html#templates" data-section="templates">
-          <span class="icon"><i class="fa-solid fa-folder"></i></span>
-          <span class="label">Templates</span>
-        </a>
+      <a href="#" data-section="templates">
+        <span class="icon"><i class="fa-solid fa-folder-open"></i></span>
+        <span class="label">Templates</span>
+      </a>
+      <a href="#" data-section="sound">
+        <span class="icon"><i class="fa-solid fa-volume-high"></i></span>
+        <span class="label">Sound Effects</span>
+      </a>
+      <a href="#" data-section="origin">
+        <span class="icon"><i class="fa-solid fa-scroll"></i></span>
+        <span class="label">Meme Origin</span>
+      </a>
 
-        <a href="index.html#sound" data-section="sound">
-          <span class="icon"><i class="fa-solid fa-volume-high"></i></span>
-          <span class="label">Sound Effects</span>
-        </a>
+      <hr class="divider" />
+      <h4>Support</h4>
 
-        <a href="index.html#origin" data-section="origin">
-          <span class="icon"><i class="fa-solid fa-scroll"></i></span>
-          <span class="label">Meme Origin</span>
-        </a>
-      </div>
-
-      <hr class="divider">
-
-      <div class="section">
-        <h4>Support</h4>
-
-        <a href="about.html">
-          <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
-          <span class="label">About Us</span>
-        </a>
-
-        <a href="contact.html">
-          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-          <span class="label">Contact Us</span>
-        </a>
-
-        <a href="terms.html">
-          <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
-          <span class="label">Terms & Conditions</span>
-        </a>
-
-        <a href="privacy.html">
-          <span class="icon"><i class="fa-solid fa-user-shield"></i></span>
-          <span class="label">Privacy Policy</span>
-        </a>
-
-        <a href="disclaimer.html">
-          <span class="icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
-          <span class="label">Disclaimer</span>
-        </a>
-
-        <a href="dmca.html">
-          <span class="icon"><i class="fa-solid fa-copyright"></i></span>
-          <span class="label">DMCA Policy</span>
-        </a>
-      </div>
-
+      <a href="about.html">
+        <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+        <span class="label">About Us</span>
+      </a>
+      <a href="contact.html">
+        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+        <span class="label">Contact Us</span>
+      </a>
+      <a href="terms.html">
+        <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
+        <span class="label">Terms &amp; Conditions</span>
+      </a>
+      <a href="privacy.html">
+        <span class="icon"><i class="fa-solid fa-user-shield"></i></span>
+        <span class="label">Privacy Policy</span>
+      </a>
+      <a href="disclaimer.html">
+        <span class="icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+        <span class="label">Disclaimer</span>
+      </a>
+      <a href="dmca.html">
+        <span class="icon"><i class="fa-solid fa-copyright"></i></span>
+        <span class="label">DMCA Policy</span>
+      </a>
     </nav>
+
+    <div class="sidebar-tags">
+      <span class="tag">#relatable</span>
+      <span class="tag">#cursed</span>
+      <span class="tag">#dank</span>
+      <span class="tag">#niche</span>
+      <span class="tag">#wholesome</span>
+      <span class="tag">#dark</span>
+    </div>
   </aside>
 
+  <!-- ── MAIN ──────────────────────────────── -->
   <main class="main">
 
+    <!-- Topbar -->
     <header class="topbar">
-      <input type="search" placeholder="Search memes..." />
+      <div class="search-wrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search memes, templates, sounds…" />
+      </div>
       <div class="top-actions">
         <button id="themeToggle" title="Toggle theme">🌙</button>
-        <button class="signin">Sign in</button>
+        <button class="signin"><i class="fa-solid fa-bolt"></i> Sign In</button>
       </div>
     </header>
 
-   <section class="content active" id="home">
-  <h2>Home</h2>
-  <div class="grid" id="home-container">
-    <p style="opacity:0.6">Loading memes...</p>
-  </div>
-</section>
+    <div class="page-content">
 
-<section class="content" id="trending">
-  <h2>Trending</h2>
-  <div class="grid" id="trending-container">
-    <p style="opacity:0.6">Loading trending memes...</p>
-  </div>
-</section>
+      <!-- ══ HOME ════════════════════════════════ -->
+      <section class="content active" id="home">
 
-    <section class="content" id="images">
-      <h2>Images</h2>
-      <div class="grid">
-        <div class="card">Image Meme 1</div>
-        <div class="card">Image Meme 2</div>
-      </div>
-    </section>
+        <!-- Hero -->
+        <div class="hero">
+          <div class="hero-glow"></div>
+          <div class="hero-glow2"></div>
+          <div class="hero-badge">● LIVE — Updated hourly</div>
+          <div class="hero-label">🔥 Today's Internet Culture</div>
+          <h1>The <em>Freshest</em><br>Memes Drop Here</h1>
+          <p>Handpicked from the depths of the internet. No cringe, just certified dank content.</p>
+        </div>
 
-    <section class="content" id="videos">
-      <h2>Videos</h2>
-      <div class="grid">
-        <div class="card">Video Meme 1</div>
-        <div class="card">Video Meme 2</div>
-      </div>
-    </section>
+        <!-- Filter chips -->
+        <div class="filter-row">
+          <span class="chip active">All</span>
+          <span class="chip">Dank</span>
+          <span class="chip">Wholesome</span>
+          <span class="chip">Cursed</span>
+          <span class="chip">Dark Humor</span>
+          <span class="chip">Relatable</span>
+          <span class="chip">Niche</span>
+        </div>
 
-    <section class="content" id="gifs">
-      <h2>Gifs</h2>
-      <div class="grid">
-        <div class="card">Gif Meme 1</div>
-        <div class="card">Gif Meme 2</div>
-      </div>
-    </section>
+        <div class="section-header">
+          <h2 class="section-title">Fresh Drops</h2>
+          <span class="section-count" id="home-count">Loading…</span>
+        </div>
 
-    <section class="content" id="templates">
-      <h2>Meme Templates</h2>
-      <div class="grid">
-        <div class="card">Classic Drake Template</div>
-        <div class="card">Distracted Boyfriend</div>
-        <div class="card">Change My Mind</div>
-      </div>
-    </section>
+        <div class="grid" id="home-container">
+          <!-- Skeletons -->
+          <div class="skel-card skeleton"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-line short"></div></div>
+          <div class="skel-card skeleton"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-line short"></div></div>
+          <div class="skel-card skeleton"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-line short"></div></div>
+          <div class="skel-card skeleton"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-line short"></div></div>
+        </div>
+      </section>
 
-    <section class="content" id="sound">
-      <h2>Sound Effects</h2>
-      <div class="grid">
-        <div class="card">Vine Boom</div>
-        <div class="card">Bruh Sound Effect</div>
-        <div class="card">Windows XP Shutdown</div>
-      </div>
-    </section>
+      <!-- ══ TRENDING ════════════════════════════ -->
+      <section class="content" id="trending">
 
-    <section class="content" id="origin">
-      <h2>Meme Origin</h2>
-      <p>Story behind famous memes.</p>
-    </section>
+        <div class="section-header">
+          <h2 class="section-title">Trending Now</h2>
+          <span class="section-count" id="trending-count">Loading…</span>
+        </div>
 
+        <div class="filter-row">
+          <span class="chip active">Today</span>
+          <span class="chip">This Week</span>
+          <span class="chip">This Month</span>
+          <span class="chip">All Time</span>
+        </div>
+
+        <div class="grid" id="trending-container">
+          <div class="skel-card skeleton"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-line short"></div></div>
+          <div class="skel-card skeleton"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-line short"></div></div>
+          <div class="skel-card skeleton"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-line short"></div></div>
+          <div class="skel-card skeleton"><div class="skeleton skel-img"></div><div class="skeleton skel-line"></div><div class="skeleton skel-line short"></div></div>
+        </div>
+      </section>
+
+      <!-- ══ IMAGES ══════════════════════════════ -->
+      <section class="content" id="images">
+        <div class="section-header">
+          <h2 class="section-title">Image Memes</h2>
+          <span class="section-count">Gallery</span>
+        </div>
+        <div class="filter-row">
+          <span class="chip active">All</span>
+          <span class="chip">Reaction</span>
+          <span class="chip">Text-on-Image</span>
+          <span class="chip">Photoshop</span>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/img1/400/400" alt="Image meme" loading="lazy" />
+              <span class="card-badge new">NEW</span>
+            </div>
+            <div class="card-body">
+              <div class="card-title">Reaction Face Compilation</div>
+              <div class="card-meta"><span>2.1k likes</span><span class="card-meta-dot"></span><span>Image</span></div>
+              <div class="card-actions">
+                <button class="like-btn"><i class="fa-regular fa-heart"></i> Like</button>
+                <button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/img2/400/400" alt="" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Morning Motivation vs Reality</div>
+              <div class="card-meta"><span>5.7k likes</span><span class="card-meta-dot"></span><span>Relatable</span></div>
+              <div class="card-actions">
+                <button class="like-btn"><i class="fa-regular fa-heart"></i> Like</button>
+                <button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/img3/400/400" alt="" loading="lazy" />
+              <span class="card-badge hot">HOT</span>
+            </div>
+            <div class="card-body">
+              <div class="card-title">When the WiFi Drops Mid-Game</div>
+              <div class="card-meta"><span>9.3k likes</span><span class="card-meta-dot"></span><span>Gaming</span></div>
+              <div class="card-actions">
+                <button class="like-btn liked"><i class="fa-solid fa-heart"></i> Liked</button>
+                <button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/img4/400/400" alt="" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-title">Monday Energy Unlocked</div>
+              <div class="card-meta"><span>3.4k likes</span><span class="card-meta-dot"></span><span>Wholesome</span></div>
+              <div class="card-actions">
+                <button class="like-btn"><i class="fa-regular fa-heart"></i> Like</button>
+                <button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ VIDEOS ══════════════════════════════ -->
+      <section class="content" id="videos">
+        <div class="section-header">
+          <h2 class="section-title">Video Memes</h2>
+          <span class="section-count">Clips &amp; Edits</span>
+        </div>
+        <div class="filter-row">
+          <span class="chip active">All</span>
+          <span class="chip">Short Clips</span>
+          <span class="chip">Compilations</span>
+          <span class="chip">Edits</span>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="card-thumb" style="background:#111;display:flex;align-items:center;justify-content:center;aspect-ratio:16/9">
+              <i class="fa-solid fa-play" style="font-size:36px;color:rgba(255,255,255,0.2)"></i>
+              <span class="card-badge new">CLIP</span>
+            </div>
+            <div class="card-body">
+              <div class="card-title">That One Guy At Every Party</div>
+              <div class="card-meta"><span>0:14</span><span class="card-meta-dot"></span><span>12.1k views</span></div>
+              <div class="card-actions">
+                <button class="like-btn"><i class="fa-regular fa-heart"></i> Like</button>
+                <button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-thumb" style="background:#111;display:flex;align-items:center;justify-content:center;aspect-ratio:16/9">
+              <i class="fa-solid fa-play" style="font-size:36px;color:rgba(255,255,255,0.2)"></i>
+              <span class="card-badge hot">VIRAL</span>
+            </div>
+            <div class="card-body">
+              <div class="card-title">Cats vs. Laser Compilation</div>
+              <div class="card-meta"><span>2:04</span><span class="card-meta-dot"></span><span>88k views</span></div>
+              <div class="card-actions">
+                <button class="like-btn"><i class="fa-regular fa-heart"></i> Like</button>
+                <button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ GIFs ════════════════════════════════ -->
+      <section class="content" id="gifs">
+        <div class="section-header">
+          <h2 class="section-title">GIF Gallery</h2>
+          <span class="section-count">Animated</span>
+        </div>
+        <div class="filter-row">
+          <span class="chip active">All</span>
+          <span class="chip">Reactions</span>
+          <span class="chip">Loops</span>
+          <span class="chip">Cinemagraph</span>
+        </div>
+        <div class="grid">
+          <div class="card"><div class="card-thumb"><img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif" alt="" loading="lazy" /></div><div class="card-body"><div class="card-title">This is Fine 🔥</div><div class="card-meta"><span>Reaction</span><span class="card-meta-dot"></span><span>4.2k uses</span></div><div class="card-actions"><button class="like-btn"><i class="fa-regular fa-heart"></i> Like</button><button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button></div></div></div>
+          <div class="card"><div class="card-thumb"><img src="https://media.giphy.com/media/HteV6g0QTNxp6/giphy.gif" alt="" loading="lazy" /></div><div class="card-body"><div class="card-title">Typing… (Forever)</div><div class="card-meta"><span>Mood</span><span class="card-meta-dot"></span><span>2.8k uses</span></div><div class="card-actions"><button class="like-btn"><i class="fa-regular fa-heart"></i> Like</button><button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button></div></div></div>
+          <div class="card"><div class="card-thumb"><img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="" loading="lazy" /></div><div class="card-body"><div class="card-title">Math is Hard</div><div class="card-meta"><span>Relatable</span><span class="card-meta-dot"></span><span>7.1k uses</span></div><div class="card-actions"><button class="like-btn liked"><i class="fa-solid fa-heart"></i> Liked</button><button class="share-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button></div></div></div>
+        </div>
+      </section>
+
+      <!-- ══ TEMPLATES ═══════════════════════════ -->
+      <section class="content" id="templates">
+        <div class="section-header">
+          <h2 class="section-title">Meme Templates</h2>
+          <span class="section-count">120+ templates</span>
+        </div>
+        <div class="filter-row">
+          <span class="chip active">Popular</span>
+          <span class="chip">Classic</span>
+          <span class="chip">2024</span>
+          <span class="chip">Blank</span>
+        </div>
+        <div class="grid">
+          <div class="template-card">
+            <img src="https://picsum.photos/seed/t1/400/225" alt="" loading="lazy" />
+            <div class="template-card-use"><button class="use-btn">Use Template</button></div>
+            <div class="template-card-body"><div class="template-card-title">Drake Pointing</div><div class="card-meta" style="margin-top:4px"><span>Classic</span><span class="card-meta-dot"></span><span>2M uses</span></div></div>
+          </div>
+          <div class="template-card">
+            <img src="https://picsum.photos/seed/t2/400/225" alt="" loading="lazy" />
+            <div class="template-card-use"><button class="use-btn">Use Template</button></div>
+            <div class="template-card-body"><div class="template-card-title">Distracted Boyfriend</div><div class="card-meta" style="margin-top:4px"><span>Classic</span><span class="card-meta-dot"></span><span>1.7M uses</span></div></div>
+          </div>
+          <div class="template-card">
+            <img src="https://picsum.photos/seed/t3/400/225" alt="" loading="lazy" />
+            <div class="template-card-use"><button class="use-btn">Use Template</button></div>
+            <div class="template-card-body"><div class="template-card-title">Change My Mind</div><div class="card-meta" style="margin-top:4px"><span>Debate</span><span class="card-meta-dot"></span><span>980k uses</span></div></div>
+          </div>
+          <div class="template-card">
+            <img src="https://picsum.photos/seed/t4/400/225" alt="" loading="lazy" />
+            <div class="template-card-use"><button class="use-btn">Use Template</button></div>
+            <div class="template-card-body"><div class="template-card-title">Two Buttons</div><div class="card-meta" style="margin-top:4px"><span>Decision</span><span class="card-meta-dot"></span><span>750k uses</span></div></div>
+          </div>
+          <div class="template-card">
+            <img src="https://picsum.photos/seed/t5/400/225" alt="" loading="lazy" />
+            <div class="template-card-use"><button class="use-btn">Use Template</button></div>
+            <div class="template-card-body"><div class="template-card-title">This Is Fine</div><div class="card-meta" style="margin-top:4px"><span>Reaction</span><span class="card-meta-dot"></span><span>620k uses</span></div></div>
+          </div>
+          <div class="template-card">
+            <img src="https://picsum.photos/seed/t6/400/225" alt="" loading="lazy" />
+            <div class="template-card-use"><button class="use-btn">Use Template</button></div>
+            <div class="template-card-body"><div class="template-card-title">Woman Yelling at Cat</div><div class="card-meta" style="margin-top:4px"><span>Reaction</span><span class="card-meta-dot"></span><span>540k uses</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ SOUND ════════════════════════════════ -->
+      <section class="content" id="sound">
+        <div class="section-header">
+          <h2 class="section-title">Sound Effects</h2>
+          <span class="section-count">50+ sounds</span>
+        </div>
+        <div class="filter-row">
+          <span class="chip active">All</span>
+          <span class="chip">Vine Era</span>
+          <span class="chip">Gaming</span>
+          <span class="chip">Cinematic</span>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+          <div class="sound-card">
+            <div class="sound-icon"><i class="fa-solid fa-burst"></i></div>
+            <div class="sound-info">
+              <div class="sound-title">Vine Boom</div>
+              <div class="sound-meta">0:01 · Vine Era · 8.2M uses</div>
+            </div>
+            <div class="sound-bar"><span></span><span></span><span></span><span></span><span></span></div>
+            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+          <div class="sound-card">
+            <div class="sound-icon"><i class="fa-solid fa-face-sad-tear"></i></div>
+            <div class="sound-info">
+              <div class="sound-title">Bruh Sound Effect #2</div>
+              <div class="sound-meta">0:02 · Classic · 5.6M uses</div>
+            </div>
+            <div class="sound-bar"><span></span><span></span><span></span><span></span><span></span></div>
+            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+          <div class="sound-card">
+            <div class="sound-icon"><i class="fa-brands fa-windows"></i></div>
+            <div class="sound-info">
+              <div class="sound-title">Windows XP Shutdown</div>
+              <div class="sound-meta">0:04 · Nostalgia · 3.1M uses</div>
+            </div>
+            <div class="sound-bar"><span></span><span></span><span></span><span></span><span></span></div>
+            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+          <div class="sound-card">
+            <div class="sound-icon"><i class="fa-solid fa-skull"></i></div>
+            <div class="sound-info">
+              <div class="sound-title">Dramatic Chipmunk</div>
+              <div class="sound-meta">0:05 · Reaction · 4.4M uses</div>
+            </div>
+            <div class="sound-bar"><span></span><span></span><span></span><span></span><span></span></div>
+            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+          <div class="sound-card">
+            <div class="sound-icon"><i class="fa-solid fa-bell"></i></div>
+            <div class="sound-info">
+              <div class="sound-title">GTA Wasted Horn</div>
+              <div class="sound-meta">0:03 · Gaming · 6.7M uses</div>
+            </div>
+            <div class="sound-bar"><span></span><span></span><span></span><span></span><span></span></div>
+            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+          <div class="sound-card">
+            <div class="sound-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+            <div class="sound-info">
+              <div class="sound-title">Coffin Dance</div>
+              <div class="sound-meta">0:30 · Cinematic · 12M uses</div>
+            </div>
+            <div class="sound-bar"><span></span><span></span><span></span><span></span><span></span></div>
+            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ ORIGIN ═══════════════════════════════ -->
+      <section class="content" id="origin">
+        <div class="section-header">
+          <h2 class="section-title">Meme Origins</h2>
+          <span class="section-count">Internet Archaeology</span>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2005</div>
+            <div class="timeline-name">Keyboard Cat</div>
+            <div class="timeline-desc">Filmed in 1984 by Charlie Schmidt, "Keyboard Cat" became a viral sensation when it was posted to YouTube in 2007. The format of "playing someone off" using the clip spawned thousands of remix videos.</div>
+          </div>
+          <div class="timeline-item" style="animation-delay:0.1s">
+            <div class="timeline-year">2010</div>
+            <div class="timeline-name">Trollface / Rage Comics</div>
+            <div class="timeline-desc">Drawn by Carlos Ramirez in 2008, the Trollface became the cornerstone of an entire genre of comics that dominated early Reddit and 4chan culture. Simple stick figures conveying complex emotions.</div>
+          </div>
+          <div class="timeline-item" style="animation-delay:0.2s">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-name">Gangnam Style</div>
+            <div class="timeline-desc">PSY's breakout hit was the first YouTube video to hit 1 billion views, spawning countless parodies and solidifying the concept of a "viral moment" in the social media age.</div>
+          </div>
+          <div class="timeline-item" style="animation-delay:0.3s">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-name">This Is Fine 🔥</div>
+            <div class="timeline-desc">Originally from KC Green's webcomic "Gunshow" (2013), the dog sitting calmly in a burning room became the defining image of 2016's chaotic political climate and remains endlessly relevant.</div>
+          </div>
+          <div class="timeline-item" style="animation-delay:0.4s">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-name">Woman Yelling At Cat</div>
+            <div class="timeline-desc">A mashup of a Real Housewives screencap and Smudge the cat, this format exploded across all platforms and became one of the most versatile reaction meme formats ever created.</div>
+          </div>
+          <div class="timeline-item" style="animation-delay:0.5s">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-name">NPC Streaming Trend</div>
+            <div class="timeline-desc">Streamers mimicking non-player characters from video games, repeating actions and phrases in loops, became a bizarre but oddly compelling TikTok phenomenon that blurred the line between content and performance art.</div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-content -->
+
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-inner">
-        <p>© <span id="year"></span> KalitaVerse.in. All rights reserved.</p>
-
+        <div class="footer-copy">© <span id="year"></span> KalitaVerse.in — All rights reserved</div>
         <nav class="footer-links">
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
           <a href="disclaimer.html">Disclaimer</a>
           <a href="dmca.html">DMCA</a>
@@ -195,10 +483,30 @@
   </main>
 </div>
 
-<script src="script.js"></script>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<!-- ── MOBILE BOTTOM NAV (visible only on small screens) ── -->
+<nav class="mobile-nav">
+  <a href="#home" data-section="home" class="active">
+    <i class="fa-solid fa-house"></i>
+    <span>Home</span>
+  </a>
+  <a href="#trending" data-section="trending">
+    <i class="fa-solid fa-fire"></i>
+    <span>Trending</span>
+  </a>
+  <a href="#images" data-section="images">
+    <i class="fa-solid fa-image"></i>
+    <span>Images</span>
+  </a>
+  <a href="#gifs" data-section="gifs">
+    <i class="fa-solid fa-photo-film"></i>
+    <span>GIFs</span>
+  </a>
+  <a href="#templates" data-section="templates">
+    <i class="fa-solid fa-folder-open"></i>
+    <span>More</span>
+  </a>
+</nav>
 
+<script src="script.js"></script>
 </body>
 </html>
