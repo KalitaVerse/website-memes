@@ -2,7 +2,7 @@
 // CONFIG / API URLS
 // ==============================
 
-const BASE_URL      = "https://https://meme-backend-311j.onrender.com/api/memes"; 
+const BASE_URL      = "//https://meme-backend-311j.onrender.com/api/memes"; 
 const API_URL       = BASE_URL;
 const TRENDING_API  = `${BASE_URL}/trending`;
 const IMAGES_API    = `${BASE_URL}/images`;
