@@ -1262,9 +1262,139 @@ body::before {
     color: var(--accent);
   }
 
-  /* push page content up so it's not hidden behind bottom nav */
+/* push page content up so it's not hidden behind bottom nav */
   .page-content {
     padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ======================
+   VIDEO CARD THUMB (16:9)
+   ====================== */
+.card-thumb.video-thumb {
+  aspect-ratio: 16 / 9;
+}
+
+/* ======================
+   MORE DRAWER (mobile)
+   ====================== */
+.more-drawer {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .more-drawer {
+    display: block;
+  }
+
+  .more-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 300;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    backdrop-filter: blur(2px);
+  }
+
+  .more-drawer.open .more-drawer-backdrop {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .more-drawer-panel {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 301;
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    border-radius: 20px 20px 0 0;
+    padding: 12px 20px calc(24px + env(safe-area-inset-bottom));
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .more-drawer.open .more-drawer-panel {
+    transform: translateY(0);
+  }
+
+  .more-drawer-handle {
+    width: 40px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin: 0 auto 18px;
+  }
+
+  /* 2x2 icon grid */
+  .more-drawer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .more-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding: 14px 8px;
+    border-radius: 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    transition: background 0.18s, color 0.18s;
+  }
+
+  .more-item i {
+    font-size: 20px;
+    color: var(--accent);
+  }
+
+  .more-item:active {
+    background: var(--card-hover);
+  }
+
+  .more-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 16px 0 12px;
+  }
+
+  /* support links list */
+  .more-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .more-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 8px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .more-links a i {
+    width: 18px;
+    text-align: center;
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  .more-links a:active {
+    background: var(--card);
+    color: var(--text);
   }
 }
 

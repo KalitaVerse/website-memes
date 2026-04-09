@@ -1,9 +1,8 @@
-
 // ==============================
 // CONFIG / API URLS
 // ==============================
 
-const BASE_URL      = "https://meme-backend-311j.onrender.com/api/memes";
+const BASE_URL      = "https://your-api.example.com/api/memes"; // ← replace with your Render URL
 const API_URL       = BASE_URL;
 const TRENDING_API  = `${BASE_URL}/trending`;
 const IMAGES_API    = `${BASE_URL}/images`;
@@ -43,6 +42,7 @@ const SOUNDS_API    = `${BASE_URL}/sounds`;
 const tabLinks = document.querySelectorAll("a[data-section]");
 const sections = document.querySelectorAll(".content");
 
+// Track which sections have already been fetched (lazy load)
 const fetched = new Set();
 
 function activateTab(targetId) {
@@ -230,7 +230,7 @@ function buildVideoCard(meme) {
   card.className = "card";
 
   const thumb = document.createElement("div");
-  thumb.className = "card-thumb";
+  thumb.className = "card-thumb video-thumb";   // 16:9 override
   thumb.style.cssText = "background:#000;";
 
   const vid = document.createElement("video");
@@ -533,8 +533,38 @@ document.addEventListener("click", async (e) => {
 });
 
 // ==============================
-// FOOTER YEAR
+// MORE DRAWER (mobile)
 // ==============================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const moreBtn    = document.getElementById("moreBtn");
+  const drawer     = document.getElementById("moreDrawer");
+  const backdrop   = document.getElementById("moreBackdrop");
+  if (!moreBtn || !drawer) return;
+
+  const openDrawer  = () => drawer.classList.add("open");
+  const closeDrawer = () => drawer.classList.remove("open");
+
+  moreBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    drawer.classList.contains("open") ? closeDrawer() : openDrawer();
+  });
+
+  backdrop.addEventListener("click", closeDrawer);
+
+  // Items inside the drawer that trigger a section change
+  drawer.querySelectorAll("[data-close-drawer]").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = link.dataset.section;
+      if (target) {
+        activateTab(target);
+        history.pushState(null, "", `#${target}`);
+      }
+      closeDrawer();
+    });
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");

@@ -457,6 +457,37 @@
 </div>
 
 <!-- ── MOBILE BOTTOM NAV (visible only on small screens) ── -->
+<!-- ── MORE DRAWER (mobile only) ── -->
+<div class="more-drawer" id="moreDrawer">
+  <div class="more-drawer-backdrop" id="moreBackdrop"></div>
+  <div class="more-drawer-panel">
+    <div class="more-drawer-handle"></div>
+    <div class="more-drawer-grid">
+      <a href="#" data-section="gifs" class="more-item" data-close-drawer>
+        <i class="fa-solid fa-photo-film"></i><span>GIFs</span>
+      </a>
+      <a href="#" data-section="templates" class="more-item" data-close-drawer>
+        <i class="fa-solid fa-folder-open"></i><span>Templates</span>
+      </a>
+      <a href="#" data-section="sound" class="more-item" data-close-drawer>
+        <i class="fa-solid fa-volume-high"></i><span>Sounds</span>
+      </a>
+      <a href="#" data-section="origin" class="more-item" data-close-drawer>
+        <i class="fa-solid fa-scroll"></i><span>Origin</span>
+      </a>
+    </div>
+    <hr class="more-divider" />
+    <div class="more-links">
+      <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+      <a href="terms.html"><i class="fa-solid fa-file-contract"></i> Terms &amp; Conditions</a>
+      <a href="privacy.html"><i class="fa-solid fa-user-shield"></i> Privacy Policy</a>
+      <a href="disclaimer.html"><i class="fa-solid fa-triangle-exclamation"></i> Disclaimer</a>
+      <a href="dmca.html"><i class="fa-solid fa-copyright"></i> DMCA Policy</a>
+    </div>
+  </div>
+</div>
+
 <nav class="mobile-nav">
   <a href="#home" data-section="home" class="active">
     <i class="fa-solid fa-house"></i>
@@ -470,12 +501,12 @@
     <i class="fa-solid fa-image"></i>
     <span>Images</span>
   </a>
-  <a href="#gifs" data-section="gifs">
-    <i class="fa-solid fa-photo-film"></i>
-    <span>GIFs</span>
+  <a href="#videos" data-section="videos">
+    <i class="fa-solid fa-video"></i>
+    <span>Videos</span>
   </a>
-  <a href="#templates" data-section="templates">
-    <i class="fa-solid fa-folder-open"></i>
+  <a href="#" id="moreBtn">
+    <i class="fa-solid fa-grip"></i>
     <span>More</span>
   </a>
 </nav>
