@@ -107,6 +107,7 @@
     </header>
 
     <div class="page-content">
+      <div class="legal-container">
       <h1>Terms and Conditions</h1>
 
       <h2>1. Acceptance of Terms</h2>
@@ -176,9 +177,12 @@
       <h2>11. Contact</h2>
       <p>
         Email us at
-        <span class="protected-email">[loading…]</span>
+        <a href="/cdn-cgi/l/email-protection#3259535e5b465344574041575f575f574172555f535b5e1c515d5f">
+          <span class="__cf_email__" data-cfemail="6308020f0a170215061110060e060e061023040e020a0f4d000c0e">[email&#160;protected]</span>
+        </a>
         or visit our <a href="contact.html">Contact Us</a> page.
       </p>
+      </div><!-- /legal-container -->
     </div>
 
     <!-- Footer -->
@@ -217,22 +221,6 @@
     themeBtn.textContent = isLight ? "☀️" : "🌙";
     localStorage.setItem("theme", isLight ? "light" : "dark");
   });
-</script>
-<script>
-  // Email protection — assembled at runtime, never in HTML source
-  (function() {
-    var p1 = "kalitaverseme", p2 = "mes@gmail.com";
-    var addr = p1 + p2;
-    document.querySelectorAll(".protected-email").forEach(function(el) {
-      var isLink = el.tagName === "A";
-      if (isLink) {
-        el.href = "mailto:" + addr;
-        el.textContent = addr;
-      } else {
-        el.innerHTML = '<a href="mailto:' + addr + '">' + addr + '</a>';
-      }
-    });
-  })();
 </script>
 </body>
 </html>

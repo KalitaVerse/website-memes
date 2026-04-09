@@ -1044,8 +1044,8 @@ body::before {
 .legal-container h2 {
   font-size: 17px;
   font-weight: 700;
-  margin-top: 44px;
-  margin-bottom: 12px;
+  margin-top: 52px;
+  margin-bottom: 14px;
   color: var(--text);
   display: flex;
   align-items: center;
@@ -1077,25 +1077,25 @@ body::before {
 .legal-container p {
   color: var(--muted);
   font-size: 14.5px;
-  line-height: 1.85;
-  margin-bottom: 16px;
+  line-height: 1.9;
+  margin-bottom: 20px;
 }
 
 /* Lists */
 .legal-container ul,
 .legal-container ol {
   padding-left: 22px;
-  margin-top: 8px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 28px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .legal-container li {
   color: var(--muted);
   font-size: 14.5px;
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 /* strong inside paragraphs */

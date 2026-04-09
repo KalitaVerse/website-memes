@@ -107,6 +107,7 @@
     </header>
 
     <div class="page-content">
+      <div class="legal-container">
       <h1>About Us</h1>
 
       <p class="lead"><strong>Welcome to KalitaVerse.in</strong></p>
@@ -147,6 +148,7 @@
         Have questions or feedback?
         Visit our <a href="contact.html"><strong>Contact Us</strong></a> page.
       </p>
+      </div><!-- /legal-container -->
     </div>
 
     <!-- Footer -->
@@ -185,22 +187,6 @@
     themeBtn.textContent = isLight ? "☀️" : "🌙";
     localStorage.setItem("theme", isLight ? "light" : "dark");
   });
-</script>
-<script>
-  // Email protection — assembled at runtime, never in HTML source
-  (function() {
-    var p1 = "kalitaverseme", p2 = "mes@gmail.com";
-    var addr = p1 + p2;
-    document.querySelectorAll(".protected-email").forEach(function(el) {
-      var isLink = el.tagName === "A";
-      if (isLink) {
-        el.href = "mailto:" + addr;
-        el.textContent = addr;
-      } else {
-        el.innerHTML = '<a href="mailto:' + addr + '">' + addr + '</a>';
-      }
-    });
-  })();
 </script>
 </body>
 </html>

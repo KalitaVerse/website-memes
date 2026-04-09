@@ -107,6 +107,7 @@
     </header>
 
     <div class="page-content">
+      <div class="legal-container">
       <h1>Disclaimer</h1>
 
       <h2>1. General Information</h2>
@@ -163,9 +164,12 @@
       <h2>8. Contact Us</h2>
       <p>
         Email:
-        <span class="protected-email">[loading…]</span>
+        <a href="/cdn-cgi/l/email-protection#ed868c8184998c9b889f9e88808880889ead8a808c8481c38e8280">
+          <span class="__cf_email__" data-cfemail="670c060b0e130611021514020a020a021427000a060e0b4904080a">[email&#160;protected]</span>
+        </a>
         or visit our <a href="contact.html">Contact Us</a> page.
       </p>
+      </div><!-- /legal-container -->
     </div>
 
     <!-- Footer -->
@@ -204,22 +208,6 @@
     themeBtn.textContent = isLight ? "☀️" : "🌙";
     localStorage.setItem("theme", isLight ? "light" : "dark");
   });
-</script>
-<script>
-  // Email protection — assembled at runtime, never in HTML source
-  (function() {
-    var p1 = "kalitaverseme", p2 = "mes@gmail.com";
-    var addr = p1 + p2;
-    document.querySelectorAll(".protected-email").forEach(function(el) {
-      var isLink = el.tagName === "A";
-      if (isLink) {
-        el.href = "mailto:" + addr;
-        el.textContent = addr;
-      } else {
-        el.innerHTML = '<a href="mailto:' + addr + '">' + addr + '</a>';
-      }
-    });
-  })();
 </script>
 </body>
 </html>
