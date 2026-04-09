@@ -11,6 +11,19 @@ const TEMPLATES_API = `${BASE_URL}/templates`;
 const SOUNDS_API    = `${BASE_URL}/sounds`;
 
 // ==============================
+// DOWNLOAD FUNCTION
+// ==============================
+
+function downloadFile(url, title = "meme") {
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = title;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+// ==============================
 // THEME
 // ==============================
 
@@ -170,7 +183,10 @@ function buildCard(meme) {
 
   const shareBtn = document.createElement("button");
   shareBtn.className = "share-btn";
-  shareBtn.innerHTML = `<i class="fa-solid fa-arrow-up-from-bracket"></i>`;
+  shareBtn.innerHTML = `<i class="fa-solid fa-download"></i>`;
+  shareBtn.addEventListener("click", () => {
+  downloadFile(meme.imageUrl, meme.title);
+});
 
   actions.append(likeBtn, shareBtn);
   body.append(title, meta, actions);
@@ -215,7 +231,10 @@ function buildImageCard(meme) {
 
   const shareBtn = document.createElement("button");
   shareBtn.className = "share-btn";
-  shareBtn.innerHTML = `<i class="fa-solid fa-arrow-up-from-bracket"></i>`;
+  shareBtn.innerHTML = `<i class="fa-solid fa-download"></i>`;
+  shareBtn.addEventListener("click", () => {
+  downloadFile(meme.imageUrl, meme.title);
+});
 
   actions.append(likeBtn, shareBtn);
   body.append(title, meta, actions);
@@ -263,8 +282,10 @@ function buildVideoCard(meme) {
 
   const shareBtn = document.createElement("button");
   shareBtn.className = "share-btn";
-  shareBtn.innerHTML = `<i class="fa-solid fa-arrow-up-from-bracket"></i>`;
-
+  shareBtn.innerHTML = `<i class="fa-solid fa-download"></i>`;
+  shareBtn.addEventListener("click", () => {
+  downloadFile(meme.imageUrl, meme.title);
+});
   actions.append(likeBtn, shareBtn);
   body.append(title, meta, actions);
   card.append(thumb, body);
