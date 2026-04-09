@@ -119,9 +119,7 @@
 
       <p>
         <strong>
-          <a href="/cdn-cgi/l/email-protection#b9d2d8d5d0cdd8cfdccbcadcd4dcd4dccaf9ded4d8d0d597dad6d4">
-            <span class="__cf_email__" data-cfemail="81eae0ede8f5e0f7e4f3f2e4ece4ece4f2c1e6ece0e8edafe2eeec">[email&#160;protected]</span>
-          </a>
+          <span class="protected-email">[loading…]</span>
         </strong>
       </p>
 
@@ -186,6 +184,22 @@
     themeBtn.textContent = isLight ? "☀️" : "🌙";
     localStorage.setItem("theme", isLight ? "light" : "dark");
   });
+</script>
+<script>
+  // Email protection — assembled at runtime, never in HTML source
+  (function() {
+    var p1 = "kalitaverseme", p2 = "mes@gmail.com";
+    var addr = p1 + p2;
+    document.querySelectorAll(".protected-email").forEach(function(el) {
+      var isLink = el.tagName === "A";
+      if (isLink) {
+        el.href = "mailto:" + addr;
+        el.textContent = addr;
+      } else {
+        el.innerHTML = '<a href="mailto:' + addr + '">' + addr + '</a>';
+      }
+    });
+  })();
 </script>
 </body>
 </html>

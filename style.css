@@ -1003,55 +1003,119 @@ body::before {
    LEGAL PAGES
    ====================== */
 .legal-container {
-  max-width: 860px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 40px 24px 80px;
+  padding: 48px 32px 100px;
 }
 
+/* Big display heading */
 .legal-container h1 {
   font-family: var(--font-display);
-  font-size: 52px;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+  font-size: 56px;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 6px;
+  margin-top: 8px;
 }
 
+/* Subtle "last updated" line */
 .legal-meta {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--muted);
-  margin-bottom: 32px;
+  margin-bottom: 48px;
+  letter-spacing: 0.05em;
 }
 
+/* Intro paragraph right under h1 */
+.legal-container > p:first-of-type {
+  font-size: 15.5px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  opacity: 0.85;
+}
+
+/* Section headings */
 .legal-container h2 {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
-  margin-top: 36px;
-  margin-bottom: 14px;
+  margin-top: 44px;
+  margin-bottom: 12px;
   color: var(--text);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  letter-spacing: 0.01em;
 }
 
 .legal-container h2::before {
   content: '';
   display: inline-block;
-  width: 4px; height: 18px;
+  width: 4px;
+  height: 18px;
   border-radius: 2px;
   background: var(--accent);
   flex-shrink: 0;
 }
 
-.legal-container p,
+/* Sub-headings */
+.legal-container h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 24px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+/* Body copy */
+.legal-container p {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+/* Lists */
+.legal-container ul,
+.legal-container ol {
+  padding-left: 22px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .legal-container li {
   color: var(--muted);
-  margin-bottom: 12px;
   font-size: 14.5px;
   line-height: 1.75;
 }
 
-.legal-container ul { padding-left: 20px; }
-.legal-container li { margin-bottom: 6px; }
+/* strong inside paragraphs */
+.legal-container p strong,
+.legal-container li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* em / italic */
+.legal-container em {
+  color: var(--accent2);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Divider between major sections */
+.legal-container hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 40px 0;
+}
 
 /* ======================
    FOOTER
@@ -1227,14 +1291,6 @@ body::before {
   box-shadow: 0 0 12px rgba(255,63,0,0.25);
 }
 
-/* legal-container already defined; ensure h3 is styled inside it */
-.legal-container h3 {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
 
 .legal-container a {
   color: var(--accent);
@@ -1245,4 +1301,22 @@ body::before {
 .legal-container a:hover {
   opacity: 0.75;
   text-decoration: underline;
+}
+
+/* ======================
+   LEGAL PAGE SPACING FIXES
+   ====================== */
+
+/* Intro paragraph right under the page h1 */
+.legal-container .lead-para {
+  font-size: 15.5px;
+  color: var(--text);
+  opacity: 0.85;
+  line-height: 1.85;
+  margin-bottom: 40px;
+}
+
+/* Give the legal page-content proper top breathing room */
+.main > .page-content > .legal-container {
+  padding-top: 40px;
 }
