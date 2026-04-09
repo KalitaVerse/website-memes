@@ -556,7 +556,7 @@ body::before {
 .card > img {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: transform 0.4s ease;
   background: var(--card-hover);
@@ -601,12 +601,15 @@ body::before {
   overflow: hidden;
   aspect-ratio: 1 / 1;
   background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -1320,3 +1323,138 @@ body::before {
 .main > .page-content > .legal-container {
   padding-top: 40px;
 }
+
+/* ============================================================
+   LIGHT MODE OVERRIDES
+   Everything here targets elements with hardcoded dark values
+   ============================================================ */
+
+/* ── Hero banner ─────────────────────────────────────────── */
+body.light .hero {
+  background: linear-gradient(135deg, #f5e6d0 0%, #ede8df 50%, #d8eef2 100%);
+  border-color: rgba(0,0,0,0.08);
+}
+
+body.light .hero-glow {
+  background: radial-gradient(circle, rgba(201,48,0,0.10) 0%, transparent 70%);
+}
+
+body.light .hero-glow2 {
+  background: radial-gradient(circle, rgba(0,126,168,0.08) 0%, transparent 70%);
+}
+
+body.light .hero h1 {
+  color: #1a1814;
+}
+
+body.light .hero h1 em {
+  text-shadow: 0 0 20px rgba(184,160,0,0.3);
+}
+
+body.light .hero-badge {
+  border-color: rgba(0,126,168,0.3);
+  background: rgba(255,255,255,0.5);
+}
+
+body.light .hero-label {
+  color: var(--accent);
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+body.light .card:hover {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+  border-color: rgba(0,0,0,0.14);
+}
+
+body.light .card-thumb {
+  background: #e0dbd3;
+}
+
+body.light .card-rank {
+  color: rgba(0,0,0,0.06);
+}
+
+/* ── Sidebar active state ────────────────────────────────── */
+body.light .sidebar nav a.active {
+  background: rgba(201,48,0,0.08);
+}
+
+/* ── Chip active ─────────────────────────────────────────── */
+body.light .chip.active {
+  box-shadow: 0 0 10px rgba(201,48,0,0.2);
+}
+
+/* ── Like button ─────────────────────────────────────────── */
+body.light .like-btn:hover {
+  border-color: rgba(201,48,0,0.35);
+}
+
+body.light .like-btn.liked {
+  background: rgba(201,48,0,0.08);
+}
+
+/* ── Sign in button ──────────────────────────────────────── */
+body.light .top-actions .signin:hover {
+  box-shadow: 0 0 12px rgba(201,48,0,0.25);
+}
+
+/* ── Sound cards ─────────────────────────────────────────── */
+body.light .sound-icon {
+  background: rgba(184,160,0,0.1);
+  border-color: rgba(184,160,0,0.25);
+}
+
+body.light .play-btn:hover {
+  box-shadow: 0 0 10px rgba(184,160,0,0.3);
+}
+
+/* ── Template overlay ────────────────────────────────────── */
+body.light .template-card-use {
+  background: rgba(255,255,255,0.7);
+}
+
+/* ── Timeline dots ───────────────────────────────────────── */
+body.light .timeline-item::before {
+  box-shadow: 0 0 8px rgba(201,48,0,0.3);
+}
+
+/* ── Skeleton shimmer ────────────────────────────────────── */
+body.light .skeleton {
+  background: linear-gradient(90deg, var(--card) 25%, var(--card-hover) 50%, var(--card) 75%);
+}
+
+/* ── Search input focus ──────────────────────────────────── */
+body.light .topbar input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201,48,0,0.08);
+}
+
+/* ── Back button (legal pages) ───────────────────────────── */
+body.light .back-btn:hover {
+  box-shadow: 0 0 8px rgba(201,48,0,0.15);
+}
+
+/* ── Featured cards ──────────────────────────────────────── */
+body.light .featured-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* ── Logo glow ───────────────────────────────────────────── */
+body.light .logo {
+  text-shadow: 0 0 16px rgba(201,48,0,0.15);
+}
+
+body.light .logo span {
+  text-shadow: 0 0 12px rgba(184,160,0,0.2);
+}
+
+/* ── Card badge ──────────────────────────────────────────── */
+body.light .card-badge {
+  backdrop-filter: none;
+}
+
+/* ── Noise overlay: slightly stronger in light mode ─────── */
+body.light::before {
+  opacity: 0.015;
+}
+
