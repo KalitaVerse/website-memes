@@ -1200,3 +1200,49 @@ body::before {
     padding-bottom: calc(80px + env(safe-area-inset-bottom));
   }
 }
+
+
+/* ======================
+   LEGAL PAGE TOPBAR
+   ====================== */
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: all 0.18s;
+}
+
+.back-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px rgba(255,63,0,0.25);
+}
+
+/* legal-container already defined; ensure h3 is styled inside it */
+.legal-container h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.legal-container a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.legal-container a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
